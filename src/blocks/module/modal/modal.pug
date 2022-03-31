@@ -1,0 +1,31 @@
+mixin modal()
+    .modal.modal-js&attributes(attributes)
+        .modal__container.modal__container-js
+            .modal__close.modal__close-js
+            .modal__content-js
+                .modal__title Оставить заявку
+                .modal__form-container
+                    form(action="#" method="post").modal__form.modal__form-js
+                        .form__placeholder-container
+                            input(type="email" placeholder=" " required)
+                            label Как вас зовут?*
+                        .form__placeholder-container
+                            input(type="tel" placeholder=" " required)
+                            label Ваш телефон*
+                        +btn('Отправить', 'send', 'submit').form_btn.form_btn-js
+                p Отправляя заявку на подключение услуг, я соглашаюсь на обработку своих персональных данных, указанных в заявке с целью информирования по услугам ООО "ГранЛайн" и заключения договора.
+            .modal__content-success.modal__content-success-js
+                img(src="img/content/success.png")
+                .modal__title Ваша заявка успешно отправлена!
+                .modal__desc Спасибо за Вашу заявку, <span>мы свяжемся с Вами в ближайшее время</span>
+                +btn('Вернуться на сайт', 'return').form_btn.form_return-btn-js
+            .modal__content-error.modal__content-error-js
+                img(src="img/content/error.png")
+                .modal__title Извините, при отправке произошла ошибка!
+                .modal__desc Пожалуйста, попробуйте заполнить форму еще раз
+                +btn('Вернуться на сайт', 'return').form_btn.form_return-btn-js
+                
+
+            
+
+

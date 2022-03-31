@@ -1,0 +1,47 @@
+// @import 'animate.scss';
+// Style plagin
+@import "variables";
+@import 'swiper/swiper-bundle.css';
+// @import "../../node_modules/bootstrap/scss/bootstrap-grid.scss";
+
+// My style
+//@import "../blocks/project/link-arrow/link-arrow";
+@import "grid-mixins";
+
+@import "functions";
+@import "utils";
+
+@import "fonts";
+@import "global";
+
+
+
+// @import "../blocks/components/send-message/send-message";
+// @import "../blocks/components/chat-girl/chat-girl";
+@import "../blocks/components/btn/btn";
+// @import "../blocks/components/status/status";
+@import "../blocks/components/logo/logo";
+@import "../blocks/components/card/card";
+@import "../blocks/components/btn/btn";
+@import "../blocks/components/banner-slider/banner-slider";
+@import "../blocks/components/banner/banner";
+@import "../blocks/components/two-banner/two-banner";
+@import "../blocks/components/news/news";
+// @import "../blocks/components/menu/menu";
+// @import "../blocks/components/avatar/avatar";
+// @import "../blocks/project/page-chat/page-chat";
+@import "../blocks/module/modal/modal";
+@import "../blocks/project/page-header/page-header";
+@import "../blocks/project/page-footer/page-footer";
+@import "../blocks/project/popular-tarif/popular-tarif";
+
+// @import "../blocks/module/modal/modal";
+
+
+// @import "../blocks/module/cards-news/cards-news";
+
+// modules
+
+
+// pages
+

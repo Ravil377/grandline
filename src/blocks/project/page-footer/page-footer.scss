@@ -1,0 +1,258 @@
+.footer {
+  background: #0F2846;
+  padding: 18px 0;
+}
+.footer__logo-img {
+  width: 150px;
+  height: 27px;
+}
+.footer__link {
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 27px;
+  color: #FFFFFF;
+  transition: $time;
+  &:hover {
+    opacity: .7;
+  }
+}
+
+.footer__nav-title {
+  font-weight: 700;
+  font-size: 16px;
+  color: #FFFFFF;
+  line-height: 27px;
+}
+.footer__nav-top {
+  width: 100%;
+  display: grid;
+  grid-template-areas: 
+  "logo"
+  "app"
+  "connection" 
+  "tech"
+  "home" 
+  "busines"
+  "magazine"
+  "other";  
+  justify-content: center;
+  position: relative;
+  @media (min-width: $screen-sm) {
+    grid-template-areas: 
+    "logo logo"
+    "app app"
+    "connection tech"
+    "home busines"
+    "other magazine";
+    justify-content: space-around;
+  }
+  @media (min-width: $screen-md) {
+    grid-template-areas: 
+    "logo logo connection tech"
+    "app app app app"
+    "home busines other magazine";
+  }
+  @media (min-width: $screen-lg) {
+    justify-content: space-between;
+    grid-template-areas: 
+    "logo connection tech app"
+    "home busines magazine other";
+  }
+  ul {
+    @include ul-none();
+    display: flex;
+    flex-direction: column;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    top: 109px;
+    height: 1px;
+    background-color: #B7BCCA;
+  }
+}
+.footer__top {
+  display: flex;
+}
+.footer__buttons {
+  display: flex;
+}
+.footer__button {
+  width: 135px;
+  height: 40px;
+  margin-right: 11px;
+  transition: $time;
+  &:hover {
+    opacity: .7;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.footer__link_gray {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 16px;
+  color: #8C94A8;
+  transition: $time;
+  
+  &:hover {
+    opacity: .7;
+  }
+}
+.footer__bottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 37px;
+  flex-direction: column;
+  @media (min-width: $screen-sm) {
+    flex-direction: row;
+  }
+  @media (min-width: $screen-lg ) {
+    max-width: 80%;  
+  }
+}
+.footer__logo {
+  margin-bottom: 26px;
+  width: 100%;
+  min-height: 84px;
+  margin-bottom: 53px !important;
+  display: flex;
+  align-items: center;
+  grid-area: logo;
+  justify-content: center;
+  @media (min-width: $screen-md) {
+    justify-content: flex-start;
+    max-width: 361px;
+  }
+}
+.footer__home  {
+  grid-area: home;
+  max-width: 361px;
+  width: 100%;
+  margin-bottom: 40px !important;
+  @media (min-width: $screen-md) {
+    margin-bottom: 0;
+  }
+  li {
+    margin-bottom: 5px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    @media (min-width: $screen-md) {
+      margin-bottom: 21px;
+    }
+  }
+}
+.footer__connection {
+  grid-area: connection;
+  max-width: 338px;
+  width: 100%;
+  min-height: 84px;
+  margin-bottom: 53px !important;
+  display: flex;
+  justify-content: space-between;
+}
+.footer__tech {
+  grid-area: tech;
+  margin-bottom: 53px !important;
+  min-height: 84px;
+  display: flex;
+  justify-content: space-between;
+}
+.footer__business {
+  grid-area: busines;
+  max-width: 338px;
+  width: 100%;
+  margin-bottom: 40px !important;
+  @media (min-width: $screen-sm) {
+    margin-bottom: 0;
+  }
+  li {
+    margin-bottom: 5px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    @media (min-width: $screen-md) {
+      margin-bottom: 21px;
+    }
+  }
+}
+.footer__other {
+  grid-area: other;
+  li {
+    margin-bottom: 5px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    @media (min-width: $screen-md) {
+      margin-bottom: 21px;
+    }
+  }
+}
+.footer__app {
+  margin: 0 auto !important;
+  margin-bottom: 53px !important;
+  min-height: 84px;
+  display: flex;
+  justify-content: space-between;
+  grid-area: app;
+  @media (min-width: $screen-lg) {
+    margin-left: auto !important;  
+  }
+}
+.footer__magazine {
+  grid-area: magazine;
+  max-width: 300px;
+  width: 100%;
+  margin-bottom: 40px !important;
+  @media (min-width: $screen-sm) {
+    margin-bottom: 0;
+  }
+  li {
+    margin-bottom: 5px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    @media (min-width: $screen-md) {
+      margin-bottom: 21px;
+    }
+  }
+}
+
+.footer__bottom_confidicial {
+  font-weight: 400;
+  font-size: 15px;
+  color: #FFFFFF;
+  text-decoration: none;
+  margin-bottom: 10px;
+  @media (min-width: $screen-sm) {
+    margin-bottom: 0;
+  }
+}
+
+.footer__bottom_copyright {
+  font-weight: 400;
+  font-size: 16px;
+  color: #FFFFFF;
+  text-decoration: none;
+  margin-bottom: 10px;
+  @media (min-width: $screen-sm) {
+    margin-bottom: 0;
+  }
+}
+
+.footer__bottom_vk {
+  width: 27px;
+  height: 15px;
+  background-image: url("data:image/svg+xml,%3Csvg width='27' height='16' viewBox='0 0 27 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.1444 15.2003H14.7444C14.7444 15.2003 15.2444 15.2003 15.4444 14.9003C15.6444 14.6003 15.5444 14.2003 15.5444 14.2003C15.5444 14.2003 15.5444 12.0003 16.4444 11.8003C17.3444 11.5003 18.7444 14.0003 20.1444 14.8003C21.0444 15.5003 21.9444 15.3003 21.9444 15.3003H25.6444C25.6444 15.3003 27.4444 15.2003 26.5444 13.7003C26.5444 13.6003 26.0444 12.6003 23.9444 10.6003C21.6444 8.40034 22.0444 8.80034 24.7444 5.20034C26.3444 3.00034 27.0444 1.70034 26.9444 1.10034C26.8444 0.500342 25.4444 0.800342 25.4444 0.800342H21.3444C21.3444 0.800342 21.0444 0.800342 20.8444 0.900342C20.7444 1.00034 20.5444 1.40034 20.5444 1.40034C20.5444 1.40034 19.8444 3.00034 19.0444 4.50034C17.2444 7.60034 16.6444 7.70034 16.3444 7.50034C15.6444 7.00034 15.8444 5.70034 15.8444 4.80034C15.8444 1.80034 16.3444 0.600342 15.0444 0.200342C14.5444 0.100342 14.2444 0.100342 13.1444 0.100342C11.6444 0.100342 10.5444 0.100342 9.94444 0.400342C9.24444 0.700342 9.04444 1.20034 9.14444 1.20034C9.44444 1.20034 9.94444 1.30034 10.2444 1.90034C10.5444 2.40034 10.5444 3.70034 10.5444 3.70034C10.5444 3.70034 10.8444 7.10034 10.0444 7.60034C9.54444 7.90034 8.94444 7.30034 7.34444 4.50034C6.54444 3.00034 5.84444 1.50034 5.84444 1.50034C5.84444 1.50034 5.44444 1.10034 5.24444 0.800342C5.14444 0.700342 4.64444 0.700342 4.64444 0.700342H0.844444C0.844444 0.700342 0.144444 0.700342 0.0444444 1.00034C-0.0555556 1.10034 0.0444444 1.70034 0.0444444 1.70034C0.0444444 1.70034 3.04444 8.70034 6.44444 12.3003C9.44444 15.3003 13.1444 15.2003 13.1444 15.2003Z' fill='white'/%3E%3C/svg%3E%0A");
+  margin-bottom: 10px;
+  @media (min-width: $screen-sm) {
+    margin-bottom: 0;
+  }
+}

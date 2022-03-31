@@ -1,0 +1,6 @@
+mixin btn(text, id, type)
+    -
+        var btnText = text || '';
+        var btnId = id || '';
+        var typeBtn = type || 'button';
+    button(class="btn" data-id=btnId type=typeBtn)&attributes(attributes)!=btnText

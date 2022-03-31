@@ -1,0 +1,17 @@
+mixin banner(data, app)
+  -
+    var titul = data.titul || '';
+    var desc = data.desc || '';
+    var img = data.img || '';
+    var app = data.app || false;
+  .container
+    .banner&attributes(attributes)
+      .banner__left-side
+        .banner__titul!=titul
+        .banner__desc!=desc
+        if app
+          .banner__buttons
+            a(href="#" target="_blank").banner__button.banner__button_google
+            a(href="#" target="_blank").banner__button.banner__button_apple
+      .banner__right-side
+        img(src=img alt=titul)
