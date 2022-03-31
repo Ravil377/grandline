@@ -1,14 +1,14 @@
 const modal = document.querySelector('.modal');
 const connectionBtn = document.querySelectorAll(`[data-id='connection']`);
 const body = document.querySelector('.body');
-const modalCloseBtn = modal.querySelector('.modal__close-js');
-const formSubmit = modal.querySelector('.modal__form-js');
-const modalContent = modal.querySelector('.modal__content-js');
-const success = modal.querySelector('.modal__content-success-js');
-const error = modal.querySelector('.modal__content-error-js');
-const returnBtns = modal.querySelectorAll('.form_return-btn-js');
+const formSubmit = document.querySelector('.modal__form-js');
+const modalCloseBtn = document.querySelector('.modal__close-js');
+const modalContent = document.querySelector('.modal__content-js');
+const success = document.querySelector('.modal__content-success-js');
+const error = document.querySelector('.modal__content-error-js');
+const returnBtns = document.querySelectorAll('.form_return-btn-js');
 
-formSubmit.addEventListener('submit', (e) => {
+formSubmit && formSubmit.addEventListener('submit', (e) => {
   e.preventDefault();
   modalContent.style.display = 'none';
   success.style.display = 'flex';
@@ -47,6 +47,6 @@ const closeModal = () => {
 }
 
 document.addEventListener('keydown', (e) => checkKeyPress(e));
-modal.addEventListener("click", e => checkPressOverlay(e));
-modalCloseBtn.addEventListener("click", closeModal);
-returnBtns.forEach(btn => btn.addEventListener('click', closeModal));
+modal && modal.addEventListener("click", e => checkPressOverlay(e));
+modalCloseBtn && modalCloseBtn.addEventListener("click", closeModal);
+returnBtns && returnBtns.forEach(btn => btn.addEventListener('click', closeModal));

@@ -1,0 +1,23 @@
+mixin header-title(data, sliderTabClass)
+  -
+    var title = data.title || '';
+    var breadcrumbsHome = data.home || '';
+    var breadcrumbsPage = data.page || '';
+    var sliderTabClass = sliderTabClass || '';
+    var menu = data.menu || {};
+    var select = data.select || false;
+  .title__container 
+    .breadcrumbs__container
+      p.breadcrumbs__home!=breadcrumbsHome
+      p.breadcrumbs__page!=breadcrumbsPage
+    h1!=title 
+    if menu !== null
+      .title__tabs-container
+        .title__tabs.title__tabs-js
+          ul(class=`swiper-wrapper ${sliderTabClass}`)
+            each item, idx in menu
+              li(class=`tab__item ${idx === 0 ? 'title__tab_active' : ''}`).swiper-slide!=item
+        if select
+          +select().title__select
+
+    

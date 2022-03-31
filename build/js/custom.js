@@ -6,13 +6,13 @@
   const modal = document.querySelector('.modal');
   const connectionBtn = document.querySelectorAll(`[data-id='connection']`);
   const body$1 = document.querySelector('.body');
-  const modalCloseBtn = modal.querySelector('.modal__close-js');
-  const formSubmit = modal.querySelector('.modal__form-js');
-  const modalContent = modal.querySelector('.modal__content-js');
-  const success = modal.querySelector('.modal__content-success-js');
-  const error = modal.querySelector('.modal__content-error-js');
-  const returnBtns = modal.querySelectorAll('.form_return-btn-js');
-  formSubmit.addEventListener('submit', e => {
+  const formSubmit = document.querySelector('.modal__form-js');
+  const modalCloseBtn = document.querySelector('.modal__close-js');
+  const modalContent = document.querySelector('.modal__content-js');
+  const success = document.querySelector('.modal__content-success-js');
+  const error = document.querySelector('.modal__content-error-js');
+  const returnBtns = document.querySelectorAll('.form_return-btn-js');
+  formSubmit && formSubmit.addEventListener('submit', e => {
     e.preventDefault();
     modalContent.style.display = 'none';
     success.style.display = 'flex';
@@ -50,9 +50,9 @@
   };
 
   document.addEventListener('keydown', e => checkKeyPress$1(e));
-  modal.addEventListener("click", e => checkPressOverlay(e));
-  modalCloseBtn.addEventListener("click", closeModal);
-  returnBtns.forEach(btn => btn.addEventListener('click', closeModal));
+  modal && modal.addEventListener("click", e => checkPressOverlay(e));
+  modalCloseBtn && modalCloseBtn.addEventListener("click", closeModal);
+  returnBtns && returnBtns.forEach(btn => btn.addEventListener('click', closeModal));
 
   /**
    * SSR Window 3.0.0
@@ -6366,6 +6366,33 @@
     });
   }
 
+  const tabs$1 = document.querySelector('.title__tabs-js');
+  const titleTabSlider = '.title__tabs-js';
+
+  if (document.querySelector(titleTabSlider)) {
+    new Swiper$1(titleTabSlider, {
+      slidesPerView: 'auto',
+      slideToClickedSlide: true,
+      spaceBetween: 5,
+      // centeredSlides: true,
+      centeredSlidesBounds: true
+    });
+  }
+
+  const changeActiveClass$1 = (e, container) => {
+    const tab = e.target;
+
+    if (tab.classList.contains('swiper-slide')) {
+      const prevTab = container.querySelector('.title__tab_active');
+      prevTab.classList.remove('title__tab_active');
+      tab.classList.add('title__tab_active');
+    } else {
+      return;
+    }
+  };
+
+  tabs$1 && tabs$1.addEventListener('click', e => changeActiveClass$1(e, tabs$1));
+
   Swiper$1.use([Navigation$1]);
   const tarifSlider = '.popular-tarif__content-js';
   const tabSlider = '.popular-tarif__tabs-js';
@@ -6449,7 +6476,6 @@
 
   tabs && tabs.addEventListener('click', e => changeActiveClass(e, tabs));
   tabsEquipment && tabsEquipment.addEventListener('click', e => changeActiveClass(e, tabsEquipment));
-
   const overlayDisabled = () => {
     const btns = document.querySelectorAll('.popular-tarif__button-right');
     btns.forEach(btn => {
@@ -6459,9 +6485,36 @@
     });
   };
 
-  window.addEventListener(`resize`, event => {
+  if (document.querySelector('.popular-tarif__button-right')) {
+    window.addEventListener(`resize`, event => {
+      overlayDisabled();
+    }, false);
     overlayDisabled();
-  }, false);
+  }
+
+  Swiper$1.use([Navigation$1]);
+  const internetSlider = '.internet__content-js';
+
+  if (document.querySelector(internetSlider)) {
+    new Swiper$1(internetSlider, {
+      slidesPerView: 'auto',
+      spaceBetween: 32,
+      centeredSlidesBounds: true,
+      navigation: {
+        nextEl: '.internet__button-right-js',
+        prevEl: '.internet__button-left-js'
+      },
+      breakpoints: {
+        992: {
+          slidesPerView: 3
+        },
+        1200: {
+          slidesPerView: 4
+        }
+      }
+    });
+  }
+
   overlayDisabled();
 
 }));

@@ -207,6 +207,7 @@
   display: none;
   width: 100vw;
   grid-area: menu;
+  box-shadow: 0px 10px 34px rgba(177, 197, 209, 0.47);
   @media (min-width: $screen-lg) {
       display: flex;
   }

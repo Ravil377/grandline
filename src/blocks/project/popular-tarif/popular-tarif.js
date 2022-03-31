@@ -81,7 +81,7 @@ const changeActiveClass = (e, container) => {
 tabs && tabs.addEventListener('click', (e) => changeActiveClass(e, tabs));
 tabsEquipment && tabsEquipment.addEventListener('click', (e) => changeActiveClass(e, tabsEquipment));
 
-const overlayDisabled = () => {
+export const overlayDisabled = () => {
   const btns = document.querySelectorAll('.popular-tarif__button-right');
   btns.forEach(btn => {
     let btnDisabled = btn.classList.contains('swiper-button-disabled');
@@ -89,9 +89,9 @@ const overlayDisabled = () => {
     btnDisabled ? overlay.classList.add('overlay_disabled') : overlay.classList.remove('overlay_disabled');
   })
 }
-
-window.addEventListener(`resize`, event => {
+if(document.querySelector('.popular-tarif__button-right')) {
+  window.addEventListener(`resize`, event => {
+    overlayDisabled();
+  }, false);  
   overlayDisabled();
-}, false);
-
-overlayDisabled();
+}

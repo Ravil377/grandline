@@ -4,6 +4,9 @@ mixin banner(data, app)
     var desc = data.desc || '';
     var img = data.img || '';
     var app = data.app || false;
+    var href = data.href || false;
+    var btnText = data.btnText || '';
+    var classHref = data.classHref || '';
   .container
     .banner&attributes(attributes)
       .banner__left-side
@@ -13,5 +16,7 @@ mixin banner(data, app)
           .banner__buttons
             a(href="#" target="_blank").banner__button.banner__button_google
             a(href="#" target="_blank").banner__button.banner__button_apple
-      .banner__right-side
+        if href
+          a(href="#" target="_blank").banner__button.banner__btn!= btnText
+      div(class=`banner__right-side ${classHref}`)
         img(src=img alt=titul)

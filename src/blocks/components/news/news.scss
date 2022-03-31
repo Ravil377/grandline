@@ -1,4 +1,4 @@
-.news__title-container {
+.news-mini__title-container {
   display: flex;
   margin-bottom: 17px;
   align-items: center;
@@ -12,12 +12,12 @@
     margin-top: 10px;
   }
 }
-.news {
+.news-mini {
   padding-top: 71px;
   padding-bottom: 71px;
   background: #F4F6FB;
 }
-.news__container {
+.news-mini__container {
   ul {
     @include ul-none();
     display: grid;
@@ -56,7 +56,7 @@
     }
   }
 }
-.news__title {
+.news-mini__title {
   font-weight: 500;
   font-size: 36px;
   color: #061A29;

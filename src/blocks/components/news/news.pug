@@ -1,8 +1,8 @@
 mixin news(news)
-  section.news&attributes(attributes)
-    .container.news__container
-      .news__title-container
-        h2.news__title Новости
+  section.news-mini&attributes(attributes)
+    .container.news-mini__container
+      .news-mini__title-container
+        h2.news-mini__title Новости
         a(href="#" target="_blank") Смотреть все
       ul
         each item in news
