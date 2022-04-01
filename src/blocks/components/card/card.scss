@@ -1,15 +1,15 @@
 .card {
     max-width: 306px;
     width: 100%;
-    background: #FFFFFF;
+    background: var(--background-white);
     box-shadow: 0px 10px 34px rgba(177, 197, 209, 0.47);
     padding: 34px 24px;
     min-height: 491px;
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    transition: .7s;
-    border-radius: 5px;
+    transition: var(--time);
+    border-radius: var(--radius);
     &:hover {
         box-shadow: 0px 20px 50px rgba(177, 197, 209, 0.5);
     }
@@ -20,7 +20,7 @@
 }
 .card__hit-container {
     display: none;
-    background: #9D66F6;
+    background: var(--background-hit);
     color: #FFFFFF;
     position: absolute;
     top: 39px;
@@ -30,7 +30,7 @@
     min-height: 29px;
     font-weight: 400;
     font-size: 14px;
-    border-radius: 5%;
+    border-radius: 5px;
     justify-content: center;
     align-items: center;
 }
@@ -49,15 +49,15 @@
 .card__title {
     font-weight: 500;
     font-size: 22px;
-    color: #061A29;
-    margin-bottom: 15px;
+    color: var(--text);
+    margin-bottom: 30px;
 }
 .card__desc {
     padding-left: 40px;
     position: relative;
     font-weight: 400;
     font-size: 14px;
-    color: #061A29;
+    color: var(--text);
     &::before {
         content: '';
         position: absolute;
@@ -72,9 +72,6 @@
     span {
         font-weight: 500;
         font-size: 22px;
-        &:last-child {
-            // display: block;
-        }
     }
 }
 
@@ -106,12 +103,16 @@
     font-weight: 500;
     font-size: 36px;
     line-height: 44px;
-    color: #061A29;
+    color: var(--text);
     margin-bottom: 17px;
+    span {
+        font-size: 22px;
+    }
 }
 
 .card__button {
-    background: #0063FA;
+    border-radius: var(--radius);
+    background: var(--background-blue);
     width: 100%;
     min-height: 48px;
     display: flex;
@@ -120,21 +121,19 @@
     text-decoration: none;
     font-weight: 500;
     font-size: 16px;
-    color: #FFFFFF;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    transition: .7s;
+    color: var(--text-white);
+    transition: $time;
     &:hover {
-        background-color: #C1DAFF;
-        color: #0063FA;
-        
+        background-color: var(--bg-hover-card);
+        color: var(--text-blue);
     }
 }
 .card__pack {
     margin-top: 16px;
     width: 100%;
-    background: #F4F6FB;
-    color: #061A29;
-    border-radius: 5%;
+    background: var(--background-gray);
+    color: var(--text);
+    border-radius: var(--radius);
     padding: 7px;
     font-weight: 400;
     font-size: 14px;
@@ -152,7 +151,7 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 18px;
-    color: #8C94A8;
+    color: var(--text-gray);
     margin-bottom: 5px;
 }
 
@@ -160,7 +159,7 @@
     font-weight: 500;
     font-size: 22px;
     line-height: 28px;
-    color: #061A29;
+    color: var(--text);
     margin-bottom: 0;
     // margin-bottom: 17px;
 }

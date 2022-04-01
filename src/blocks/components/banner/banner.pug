@@ -1,4 +1,4 @@
-mixin banner(data, app)
+mixin banner(data, app, gray)
   -
     var titul = data.titul || '';
     var desc = data.desc || '';
@@ -7,7 +7,8 @@ mixin banner(data, app)
     var href = data.href || false;
     var btnText = data.btnText || '';
     var classHref = data.classHref || '';
-  .container
+    var gray = gray || false;
+  div(class=`container`)
     .banner&attributes(attributes)
       .banner__left-side
         .banner__titul!=titul

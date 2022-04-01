@@ -1,15 +1,24 @@
 -
 	const data = {
 		internet: [
-				{ title: 'Премиум', desc: '<span>180</span> каналов', pack: 'В пакет входит подписка на сервисы Netflx, Megogo и Wink', price: '950 ₽/мес', button: 'Подключить', type:'tv', id: "connection" },
-				{ title: 'Базовый PRO 100', desc: '<span>до 100</span> Мбит/с',	price: '520 ₽/мес', button: 'Подключить', hit: true, type: 'internet', id: "connection" },
-				{ title: 'Безлимитный', desc: '<span>300</span> минут',	price: '650 ₽/мес', button: 'Подключить', type: 'phone', pack: `Стоимость превышения: <span>0 ₽ / мин.</span>`, id: "connection" },
-				{ title: 'Просто видео', desc: '<span>2</span> видеокамеры и <span>1</span>&nbsp;видеорегистратор',	price: '19 000 ₽', button: 'Подключить', type: 'video', pack: `Камера EZ-IPC-B3B20P-0280B Видеорегистратор EZ-NVR1B04`, id: "connection" }
+				{ title: 'Премиум', desc: '<span>180</span> каналов', pack: 'В пакет входит подписка на сервисы Netflx, Megogo и Wink', price: '950 <span>₽/мес</span>', button: 'Подключить', type:'tv', id: "connection" },
+				{ title: 'Базовый PRO 100', desc: '<span>до 100</span> Мбит/с',	price: '520 <span>₽/мес</span>', button: 'Подключить', hit: true, type: 'internet', id: "connection" },
+				{ title: 'Безлимитный', desc: '<span>300</span> минут',	price: '650 <span>₽/мес</span>', button: 'Подключить', type: 'phone', pack: `Стоимость превышения: <span>0 ₽ / мин.</span>`, id: "connection" },
+				{ title: 'Просто видео', desc: '<span>2</span> видеокамеры и <span>1</span>&nbsp;видеорегистратор',	price: '19 000 <span>₽</span>', button: 'Подключить', type: 'video', pack: `Камера EZ-IPC-B3B20P-0280B Видеорегистратор EZ-NVR1B04`, id: "connection" }
+		],
+		telephony: [
+				{ title: 'Безлимитный', desc: '<span>∞</span> минут', pack: 'Стоимость превышения: 0 ₽ / мин.', price: '950 <span>₽/мес</span>', button: 'Подключить', type:'phone', id: "connection" },
+				{ title: 'Комбинированный', desc: '<span>300</span> минут',	pack: 'Стоимость превышения:0,70 ₽ / мин.', price: '520 <span>₽/мес</span>', button: 'Подключить', hit: true, type: 'phone', id: "connection" },
+				{ title: 'Повременный', desc: '<span>0</span> минут',	price: '650 <span>₽/мес</span>', button: 'Подключить', type: 'phone', pack: `Стоимость превышения:0,70 ₽ / мин.`, id: "connection" },
 		],
 		mainslider: [
 				{ title: 'Домашний интернет на высокой скорости', desc: 'Скорость до 500 Мбит/с', button: 'Подробнее', href: '#', img: 'img/content/home_internet.png' },
 				{ title: 'Управляйте услугами с помощью мобильного телефона', desc: 'Установите приложение «ГранЛайн личный кабинет»', button: 'Подробнее', href: '#', img: 'img/content/phone_app 2.png' },
 				{ title: 'Домашний интернет на высокой скорости', desc: 'Скорость до 500 Мбит/с', button: 'Подробнее', href: '#', img: 'img/content/home_internet.png' },
+				{ title: 'Управляйте услугами с помощью мобильного телефона', desc: 'Установите приложение «ГранЛайн личный кабинет»', button: 'Подробнее', href: '#', img: 'img/content/phone_app 2.png' },
+		],
+		magazinelider: [
+				{ title: 'Узнайте как дела дома с экрана смартфона', desc: 'Беспроводные облачные Full-HD камеры', button: 'Перейти в каталог', href: '#', img: 'img/content/internet2.png' },
 				{ title: 'Управляйте услугами с помощью мобильного телефона', desc: 'Установите приложение «ГранЛайн личный кабинет»', button: 'Подробнее', href: '#', img: 'img/content/phone_app 2.png' },
 		],
 		mainbanner: {
@@ -27,15 +36,35 @@
 			btnText: 'Перейти в магазин',
 			classHref: 'banner__right-side_size'
 		},
+		faqBanner: {
+			titul: 'Проверьте в разделе FAQ', 
+			desc: 'Возможно Ваша проблема уже обсуждалась и мы подготовили подробный ответ',
+			app: false,
+			img: 'img/content/womanfaq.png',
+			href: '#',
+			btnText: 'Перейти в раздел',
+		},
+		magazine: {
+			titul: 'Защитите свой домот протечек со скидкой 15%', 
+			desc: 'По промокоду GRANLINE - на сайте neptunsale.ru',
+			app: false,
+			img: 'img/content/neptun.png',
+			href: 'neptunsale.ru',
+			btnText: 'Перейти на сайт',
+		},
 		equipmentSlider: [
-			{ title: 'D-Link DIR-806', pack: 'Начальный уровень', price: '2850 ₽', button: 'Заказать', type: 'Wi-Fi роутеры', img: 'img/content/dir806.jpg', id: "connection" },
-			{ title: 'TVIP S-Box v.530', pack: 'Можно приобрести в рассрочку: 3 месяца - 1800 ₽/мес 6 месяцев - 950 ₽/мес', price: '4990 ₽', button: 'Заказать', type: 'ТВ-приставки', img: 'img/content/sbox.jpg', id: "connection" },
-			{ title: 'D-Link DIR-825', pack: 'Продвинутый уровень', price: '4000 ₽', button: 'Заказать', type: 'Wi-Fi роутеры', img: 'img/content/dir825.jpg', id: "connection" },
-			{ title: 'DCS-8100LH', price: '9 095 ₽', button: 'Заказать', type: 'Видеонаблюдение', img: 'img/content/8100.jpg', id: "connection" },
+			{ title: 'D-Link DIR-806', pack: 'Начальный уровень', price: '2850 <span>₽</span>', button: 'Заказать', type: 'Wi-Fi роутеры', img: 'img/content/dir806.jpg', id: "connection" },
+			{ title: 'TVIP S-Box v.530', pack: 'Можно приобрести в рассрочку: 3 месяца - 1800 <span>₽/мес</span> 6 месяцев - 950 <span>₽/мес</span>', price: '4990 <span>₽</span>', button: 'Заказать', type: 'ТВ-приставки', img: 'img/content/sbox.jpg', id: "connection" },
+			{ title: 'D-Link DIR-825', pack: 'Продвинутый уровень', price: '4000 <span>₽</span>', button: 'Заказать', type: 'Wi-Fi роутеры', img: 'img/content/dir825.jpg', id: "connection" },
+			{ title: 'DCS-8100LH', price: '9 095 <span>₽</span>', button: 'Заказать', type: 'Видеонаблюдение', img: 'img/content/8100.jpg', id: "connection" },
 		],
 		snamiudobnee: [
 			{ title: 'Оставьте заявку на подключение', desc: 'С вами свяжется менеджер и поможет подобрать тариф', button: 'Оставить заявку', img: 'img/content/man.png', id: "connection" },
 			{ title: 'Оплачивайте по номеру лицевого счета', desc: 'Оплата картами любого банка и без комиссии', button: 'Оплатить', img: 'img/content/woman.png', href: "#" },
+		],
+		magazineBanner: [
+			{ title: 'Wi-Fi роутеры от мировых брендов', desc: 'С расширенной гарантией на два года', button: 'Перейти в каталог', img: 'img/content/routers.png', href: "#" },
+			{ title: 'Любимые фильмы, сериалы и шоу в разрешении 4K UHD', desc: 'C ТВ-приставкой TVIP S-Box v.530', button: 'Перейти в каталог', img: 'img/content/tvip_tv.png', href: "#" },
 		],
 		mainnews: [
 			{ title: 'Системы безопасности Ajax', data: '2 февраля 2022 г.' },
@@ -54,6 +83,18 @@
 			title: 'Интернет',
 			home: 'Для дома',
 			page: 'Интернет',
+			select: false,
+		},
+		telephonyPageTitle: {
+			title: 'Телефония',
+			home: 'Для дома',
+			page: 'Телефония',
+			select: false,
+		},
+		supportPageTitle: {
+			title: 'Поддержка',
+			home: 'Для дома',
+			page: 'Поддержка',
 			select: false,
 		},
 	}

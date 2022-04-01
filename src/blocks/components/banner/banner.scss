@@ -1,9 +1,9 @@
 .banner {
   position: relative;
   margin-top: 80px;
-  background: #0063FA;
+  background: var(--background-blue);
   box-shadow: 0px 10px 34px rgba(177, 197, 209, 0.47);
-  border-radius: 5px;
+  border-radius: var(--radius);
   min-height: 320px;
   display: flex;
   justify-content: space-between;
@@ -30,7 +30,7 @@
     object-fit: contain;
     opacity: 1;
     @media (min-width: $screen-md) {
-      opacity: .2;
+      opacity: var(--opacity);
     }
     @media (min-width: $screen-lg) {
       opacity: 1;
@@ -58,16 +58,12 @@
   @media (min-width: $screen-md) {
     padding: 58px 27px;
   }
-  // @media (min-width: $screen-lg) {
-  //   max-width: 567px;  
-  // }
-  
 }
 .banner__titul {
   font-weight: 500;
   font-size: 210%;
   line-height: 44px;
-  color: #FFFFFF;
+  color: var(--text-white);
   margin-bottom: 15px;
   @media (min-width: $screen-xxl) {
     font-size: 36px;
@@ -78,7 +74,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: #FFFFFF;
+  color: var(--text-white);
   margin-bottom: 38px;
 }
 .banner__buttons {
@@ -90,7 +86,7 @@
   background-repeat: no-repeat;
   background-size: contain;
   margin-right: 9px;
-  transition: $time;
+  transition: var(--time);
   &:last-child {
     margin-right: 0;
   }
@@ -109,9 +105,9 @@
   max-width: 258px;
   width: 100%;
   text-decoration: none;
-  background: #FFFFFF;
-  color: #0063FA;
-  border-radius: 5%;
+  background: var(--background-white);
+  color: var(--text-blue);
+  border-radius: var(--radius);
   min-height: 48px;
   display: flex;
   justify-content: center;
@@ -121,7 +117,36 @@
 }
 .banner__right-side_size {
   max-width: 450px;
-  @media (min-width: 768px) {
+}
+.support__banner-container .container {
+  padding: 0;
+}
+.support__banner {
+  margin-top: 0;
+  margin-left: 0;
+  min-height: auto;
+  margin-bottom: 32px;
+  @media (min-width: $screen-xl) {
+    margin-left: 32px;
+    margin-bottom: 0;
+    min-width: 644px;
+    max-width: 644px;
+  }
+  .banner__right-side {
     
+    margin-top: auto;
+    @media (min-width: $screen-md) {
+      height: 243px;  
+    }
+  }
+  .banner__left-side {
+    @media (min-width: $screen-md) {
+      padding: 37px 26px;  
+    }
+    .banner__titul {
+      font-weight: 500;
+      font-size: 22px;
+      line-height: 27px;
+    }
   }
 }

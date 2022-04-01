@@ -6517,4 +6517,97 @@
 
   overlayDisabled();
 
+  Swiper$1.use([Navigation$1]);
+  const telephonySlider = '.telephony__content-js';
+
+  if (document.querySelector(telephonySlider)) {
+    new Swiper$1(telephonySlider, {
+      slidesPerView: 'auto',
+      spaceBetween: 32,
+      centeredSlidesBounds: true,
+      navigation: {
+        nextEl: '.telephony__button-right-js',
+        prevEl: '.telephony__button-left-js'
+      },
+      breakpoints: {
+        992: {
+          slidesPerView: 3
+        },
+        1200: {
+          slidesPerView: 4
+        }
+      }
+    });
+  }
+
+  overlayDisabled();
+
+  const supportForm = document.querySelector('.support__form-js');
+  supportForm && supportForm.addEventListener('click', e => {
+    const input = e.target.closest('.support__placeholder-container');
+
+    if (input) {
+      input.classList.remove('form__placeholder-container_active');
+    } // .closest('.support__placeholder-container')
+
+  });
+
+  Swiper$1.use([Navigation$1]);
+  const magazineTopSaleSlider = '.top-sale__content-js';
+  const magazineSlider = '.magazine__content-js';
+  const tab2 = document.querySelector('.magazine__tabs2-js');
+
+  if (document.querySelector(magazineTopSaleSlider)) {
+    new Swiper$1(magazineTopSaleSlider, {
+      slidesPerView: 'auto',
+      spaceBetween: 32,
+      centeredSlidesBounds: true,
+      navigation: {
+        nextEl: '.top-sale__button-left-js',
+        prevEl: '.top-sale__button-right-js'
+      },
+      breakpoints: {
+        992: {
+          slidesPerView: 3
+        },
+        1200: {
+          slidesPerView: 4
+        }
+      }
+    });
+  }
+
+  if (document.querySelector(magazineSlider)) {
+    new Swiper$1(magazineSlider, {
+      slidesPerView: 'auto',
+      spaceBetween: 32,
+      centeredSlidesBounds: true,
+      navigation: {
+        nextEl: '.magazine__button-left-js',
+        prevEl: '.magazine__button-right-js'
+      },
+      breakpoints: {
+        992: {
+          slidesPerView: 3
+        },
+        1200: {
+          slidesPerView: 4
+        }
+      }
+    });
+  }
+
+  tab2.addEventListener('click', e => {
+    const tab = e.target;
+    const isTab = tab.classList.contains('tab2__item-js');
+
+    if (isTab) {
+      tab2.querySelector('.menu2__tab_active').classList.remove('menu2__tab_active');
+      tab.classList.add('menu2__tab_active');
+    } else {
+      return;
+    }
+  });
+  overlayDisabled();
+
 }));

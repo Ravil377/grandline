@@ -1,3 +1,6 @@
+.two-banner {
+  height: fit-content;
+}
 .two-banner__container {
   padding: 71px 20px;
 }
@@ -68,6 +71,7 @@
   margin-bottom: 29px;
 }
 .two-banner__btn {
+  cursor: pointer;
   text-decoration: none;
   width: 100%;
   min-height: 48px;
@@ -79,8 +83,13 @@
   line-height: 48px;
   color: #FFFFFF;
   background: #0063FA;
-  border-radius: 5%;
+  border-radius: 5px;
   margin-top: auto;
+  transition: $time;
+  &:hover {
+    color: #0063FA;
+    background-color: #c1daff;
+  }
   @media (min-width: $screen-lg) {
     max-width: 257px;
   }

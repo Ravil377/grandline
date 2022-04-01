@@ -1,0 +1,20 @@
+extends pug/layout.pug
+
+block meta
+  title Телефония
+block header
+
+block content
+  +page-header()
+  +page-telephony()
+  +modal()
+  //- +banner-slider(data.mainslider).main-slider-js
+  //- +popular-tarif(data.internet, ['Интернет', 'Телевидение', 'Телефония', 'Видеонаблюдение'], 'popular-tarif', 'Популярные тарифы', 'popular-tarif__tabs-js', 'tarif')
+  //- +banner(data.mainbanner, true).banner_mt6.banner__mb8
+  //- +popular-tarif(data.equipmentSlider, ['Популярное', 'Wi-Fi роутеры', 'Видеонаблюдение', 'ТВ-приставки', 'Защита от протечки'], 'equipment', 'Оборудование', 'equipment__content-js', 'equipment').equipment__container
+  //- +two-banner(data.snamiudobnee, 'С нами удобнее')
+  //- +news(data.mainnews)
+  +page-footer()
+  //- +modal()
+block footer
+  //- +page-footer()

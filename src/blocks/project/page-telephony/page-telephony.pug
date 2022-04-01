@@ -1,0 +1,15 @@
+mixin page-telephony()
+	section.internet.telephony
+		.container 
+			+header-title(data.telephonyPageTitle)
+		.container.popular-tarif__container.overlay-js
+			div(class=`popular-tarif__content telephony__content-js`)
+				.popular-tarif__wrapper.swiper-wrapper
+					each card in data.telephony
+						+card(card, 'tarif').swiper-slide
+			div(class=`popular-tarif__button-arrow popular-tarif__button-left telephony__button-left-js`)
+			div(class=`popular-tarif__button-arrow popular-tarif__button-right telephony__button-right-js`)
+		.container.telephony__desc-container 
+			p.telephony__desc Стоимость подключения абонентского устройства оператора по оказанию услуг местной телефонной связи составляет 1500 руб.
+	.internet__banner
+		+banner(data.internetBanner, true).banner_mt6.banner__mb8

@@ -5,7 +5,6 @@
 // @import "../../node_modules/bootstrap/scss/bootstrap-grid.scss";
 
 // My style
-//@import "../blocks/project/link-arrow/link-arrow";
 @import "grid-mixins";
 
 @import "functions";
@@ -28,9 +27,13 @@
 
 @import "../blocks/module/modal/modal";
 @import "../blocks/project/page-header/page-header";
+@import "../blocks/project/page-magazine/page-magazine";
+@import "../blocks/project/page-error/page-error";
 @import "../blocks/project/page-footer/page-footer";
 @import "../blocks/project/popular-tarif/popular-tarif";
 @import "../blocks/project/page-internet/page-internet";
+@import "../blocks/project/page-telephony/page-telephony";
+@import "../blocks/project/page-support/page-support";
 
 
 @import "../blocks/project/news/news";

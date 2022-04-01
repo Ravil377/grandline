@@ -6,11 +6,11 @@
 }
 
 .popular-tarif__title {
+  margin: 0;
   font-weight: 500;
   font-size: 36px;
   line-height: 44px;
   color: #061A29;
-  margin-bottom: 21px;
 }
 
 .popular-tarif__tabs {  
@@ -21,7 +21,7 @@
     // overflow: hidden;
     li {
       width: auto;
-      border-radius: 5%;
+      border-radius: 5px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -96,9 +96,9 @@
   background-position: center;
   cursor: pointer;
   z-index: 61;
-  transition: .7s;
+  transition: $time;
   &:hover {
-    opacity: .7;
+    opacity: $opacity;
   }
   @media (min-width: $screen-sm) {
     display: block;
@@ -142,5 +142,35 @@
 .overlay_disabled {
   &:after {
     background: unset !important;
+  }
+}
+
+.popular-tarif__title-container {
+  display: flex;
+  
+  margin-bottom: 21px;
+  flex-direction: column;
+  @media (min-width: $screen-sm) {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+  
+  a {
+    padding-bottom: 5px;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 16px;
+    color: var( --text-gray);
+    margin: 0 auto;
+    margin-top: 20px;
+    transition: var(--time);
+    
+    @media (min-width: $screen-sm) {
+      margin-left: 22px;
+      margin-top: 0;
+    }
+    &:hover {
+      opacity: var(--opacity);
+    }
   }
 }
