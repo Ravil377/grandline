@@ -6,6 +6,12 @@
 				{ title: 'Безлимитный', desc: '<span>300</span> минут',	price: '650 <span>₽/мес</span>', button: 'Подключить', type: 'phone', pack: `Стоимость превышения: <span>0 ₽ / мин.</span>`, id: "connection" },
 				{ title: 'Просто видео', desc: '<span>2</span> видеокамеры и <span>1</span>&nbsp;видеорегистратор',	price: '19 000 <span>₽</span>', button: 'Подключить', type: 'video', pack: `Камера EZ-IPC-B3B20P-0280B Видеорегистратор EZ-NVR1B04`, id: "connection" }
 		],
+		business: [
+				{ title: 'Бизнес 5', desc: '<span>до 5</span> Мбит/с', price: '950 <span>₽/мес</span>', button: 'Подключить', price: "1500 <span>₽/мес</span>", button: 'Подключить', type:'internet', id: "connection" },
+				{ title: 'Бизнес 10', desc: '<span>до 10</span> Мбит/с', price: '520 <span>₽/мес</span>', button: 'Подключить', price: "2800 <span>₽/мес</span>", hit: true, button: 'Подключить', type: 'internet', id: "connection" },
+				{ title: 'Бизнес 20', desc: '<span>до 20</span> Мбит/с', pack: "Предоставляются при наличии технической возможности",	price: '4800 <span>₽/мес</span>', button: 'Подключить', type: 'internet', id: "connection" },
+				{ title: 'Бизнес 50', desc: '<span>до 50</span> Мбит/с', pack: "Предоставляются при наличии технической возможности",	price: '7200 <span>₽/мес</span>', button: 'Подключить', type: 'internet', id: "connection" }
+		],
 		telephony: [
 				{ title: 'Безлимитный', desc: '<span>∞</span> минут', pack: 'Стоимость превышения: 0 ₽ / мин.', price: '950 <span>₽/мес</span>', button: 'Подключить', type:'phone', id: "connection" },
 				{ title: 'Комбинированный', desc: '<span>300</span> минут',	pack: 'Стоимость превышения:0,70 ₽ / мин.', price: '520 <span>₽/мес</span>', button: 'Подключить', hit: true, type: 'phone', id: "connection" },
@@ -19,6 +25,10 @@
 		],
 		magazinelider: [
 				{ title: 'Узнайте как дела дома с экрана смартфона', desc: 'Беспроводные облачные Full-HD камеры', button: 'Перейти в каталог', href: '#', img: 'img/content/internet2.png' },
+				{ title: 'Управляйте услугами с помощью мобильного телефона', desc: 'Установите приложение «ГранЛайн личный кабинет»', button: 'Подробнее', href: '#', img: 'img/content/phone_app 2.png' },
+		],
+		businessslider: [
+				{ title: 'Пакетные предложениядля вашего бизнеса', desc: 'Скорость до 1000 Мбит/с', button: 'Подробнее', href: '#', img: 'img/content/mbps.png' },
 				{ title: 'Управляйте услугами с помощью мобильного телефона', desc: 'Установите приложение «ГранЛайн личный кабинет»', button: 'Подробнее', href: '#', img: 'img/content/phone_app 2.png' },
 		],
 		mainbanner: {
@@ -79,6 +89,30 @@
 			menu: [ 'Все публикации', 'Новости', 'Технические работы'	],
 			select: true,
 		},
+		detailNewsPageTitle: {
+			title: 'Новости',
+			home: 'Для дома',
+			category: 'Новости',
+			page: 'Расширение магистральных каналов',
+			select: false,
+		},
+		detailPageTitle: {
+			home: 'Интернет-магазин',
+			category: 'Оборудование',
+			page: 'D-link DIR-806',
+			select: false,
+		},
+		faqPageTitle: {
+			title: 'Ответы на вопросы',
+			home: 'Для дома',
+			page: 'Ответы на вопросы',
+			menu: [ 'Интернет', 'Общие вопросы', 'Оплата', 'Телевидение' ],
+		},
+		paymentPageTitle: {
+			title: 'Способ оплаты',
+			home: 'Для дома',
+			page: 'Способы оплаты',
+		},
 		internetPageTitle: {
 			title: 'Интернет',
 			home: 'Для дома',
@@ -89,6 +123,12 @@
 			title: 'Телефония',
 			home: 'Для дома',
 			page: 'Телефония',
+			select: false,
+		},
+		contactsPageTitle: {
+			title: 'Контакты',
+			home: 'Для дома',
+			page: 'Контакты',
 			select: false,
 		},
 		supportPageTitle: {

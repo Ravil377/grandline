@@ -9,19 +9,6 @@ if(document.querySelector(burgerSwiper)) {
   const swiperBurgerSlider = new Swiper(burgerSwiper, {
     slidesPerView: 'auto',
     spaceBetween: 32,
-    // centeredSlidesBounds: true,
-    // navigation: {
-    //   nextEl: '.popular-tarif__button-right-js',
-    //   prevEl: '.popular-tarif__button-left-js',
-    // },
-    // breakpoints: {
-    //   992: {
-    //     slidesPerView: 3,
-    //   },
-    //   1200: {
-    //     slidesPerView: 4,
-    //   },
-    // }
   })
 }
 

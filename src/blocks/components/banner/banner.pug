@@ -8,16 +8,16 @@ mixin banner(data, app, gray)
     var btnText = data.btnText || '';
     var classHref = data.classHref || '';
     var gray = gray || false;
-  div(class=`container`)
-    .banner&attributes(attributes)
-      .banner__left-side
-        .banner__titul!=titul
-        .banner__desc!=desc
-        if app
-          .banner__buttons
-            a(href="#" target="_blank").banner__button.banner__button_google
-            a(href="#" target="_blank").banner__button.banner__button_apple
-        if href
-          a(href="#" target="_blank").banner__button.banner__btn!= btnText
-      div(class=`banner__right-side ${classHref}`)
-        img(src=img alt=titul)
+  //- div(class=`container`)
+  .banner&attributes(attributes)
+    .banner__left-side
+      .banner__titul!=titul
+      .banner__desc!=desc
+      if app
+        .banner__buttons
+          a(href="#" target="_blank").banner__button.banner__button_google
+          a(href="#" target="_blank").banner__button.banner__button_apple
+      if href
+        a(href="#" target="_blank").banner__button.banner__btn!= btnText
+    div(class=`banner__right-side ${classHref}`)
+      img(src=img alt=titul)

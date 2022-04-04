@@ -24,4 +24,5 @@ mixin page-magazine()
     +two-banner(data.magazineBanner, '').top-sale__two-banner
   section.magazine-equipment
     +popular-tarif(data.equipmentSlider, [ 'Wi-Fi роутеры', 'Видеонаблюдение', 'ТВ-приставки'], 'magazine', 'Оборудование', 'magazine', 'equipment', [ 'Для дома', 'Для офиса' ], 'Перейти в каталог', '#').equipment__container
-    +banner(data.magazine, false, true).banner_mt6.banner__mb8.magazine__banner-bg
+    .container
+      +banner(data.magazine, false, true).banner_mt6.banner__mb8.magazine__banner-bg

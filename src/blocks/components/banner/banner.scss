@@ -17,11 +17,12 @@
   right: 0;
   bottom: 0;
   @media (min-width: $screen-md) {
-    height: auto;
+    height: 100%;
     max-width: 470px;
     width: 100%;
   }
   @media (min-width: $screen-lg) {
+    height: auto;
     position: relative;
   }
   img {

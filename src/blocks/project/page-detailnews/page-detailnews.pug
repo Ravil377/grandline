@@ -1,0 +1,32 @@
+mixin page-detailnews()
+  section.detail-news
+    .container  
+      +header-title(data.detailNewsPageTitle)
+
+      .detail-news__container
+        .detail-news__content
+          h1.detail-news__title Расширение магистральных каналов
+          p.detail-news__date 1 марта 2022 г.
+          img(src='/img/content/news1.png').detail-news__img
+          p.detail-news__text Друзья! Оператор связи «ГранЛайн» переходит на более высокопроизводительное оборудование. Цель – расширение магистральных каналов связи до 200 Гбит/с. за счет модернизации магистрального каналообразующего оборудования. Однако, чтобы провести работы, придется на несколько часов отключить Интернет во всех наших комплексах.
+          p.detail-news__text Работы будут проводиться в ночь с 21 на 22 февраля, перерыв может составить до 4-х часов. <span>Приносим извинения за неудобства.</span>
+        .detail-news__sidebar
+          ul.detail-news__list 
+            li.detail-news__sidebar-title Последние новости
+            li.detail-news__news
+              a(href="#").detail-news__news-link
+                p.detail-news__news-title Технические работы 08.02.2022
+                p.detail-news__news-date 6 февраля 2022 г.
+            li.detail-news__news
+              a(href="#").detail-news__news-link
+                p.detail-news__news-title Технические работы 08.02.2022
+                p.detail-news__news-date 7 февраля 2022 г.
+            li.detail-news__news
+              a(href="#").detail-news__news-link
+                p.detail-news__news-title Новые поступления Wi-Fi роутеров Dlink уже в это воскресенье!
+                p.detail-news__news-date 26 декабря 2022 г.
+          .detail-news__sidebar-banner 
+            p.detail-news__banner-title ГранЛайн в твоем смартфоне
+            a(href='#').detail-news__banner-btn.banner__button_google
+            a(href='#').detail-news__banner-btn.banner__button_apple
+            img(src='/img/content/girl.png').detail-news__sidebar-banner-img

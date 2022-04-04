@@ -13,9 +13,8 @@
 @import "fonts";
 @import "global";
 
-
+// components
 @import "../blocks/components/btn/btn";
-
 @import "../blocks/components/logo/logo";
 @import "../blocks/components/card/card";
 @import "../blocks/components/banner-slider/banner-slider";
@@ -24,8 +23,9 @@
 @import "../blocks/components/two-banner/two-banner";
 @import "../blocks/components/news/news";
 @import "../blocks/components/header__title/header__title";
-
+// modules
 @import "../blocks/module/modal/modal";
+// pages
 @import "../blocks/project/page-header/page-header";
 @import "../blocks/project/page-magazine/page-magazine";
 @import "../blocks/project/page-error/page-error";
@@ -34,17 +34,10 @@
 @import "../blocks/project/page-internet/page-internet";
 @import "../blocks/project/page-telephony/page-telephony";
 @import "../blocks/project/page-support/page-support";
-
-
+@import "../blocks/project/page-business/page-business";
+@import "../blocks/project/page-detail/page-detail";
 @import "../blocks/project/news/news";
-
-// @import "../blocks/module/modal/modal";
-
-
-// @import "../blocks/module/cards-news/cards-news";
-
-// modules
-
-
-// pages
-
+@import "../blocks/project/page-faq/page-faq";
+@import "../blocks/project/page-payment/page-payment";
+@import "../blocks/project/page-contacts/page-contacts";
+@import "../blocks/project/page-detailnews/page-detailnews";

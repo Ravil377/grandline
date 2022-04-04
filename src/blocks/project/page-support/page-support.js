@@ -4,5 +4,4 @@ supportForm && supportForm.addEventListener('click', (e) => {
   if(input) {
     input.classList.remove('form__placeholder-container_active');
   }
-  // .closest('.support__placeholder-container')
 })

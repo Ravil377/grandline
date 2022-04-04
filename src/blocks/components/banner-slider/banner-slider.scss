@@ -30,6 +30,13 @@
     background: linear-gradient(90deg, #B7FBFF 0%, #B2FFC4 100%);
   }
 }
+
+.slider_bg-purple {
+  @media (min-width: $screen-md) {
+    background: linear-gradient(90deg, #D7E9FB 0%, #CEB2F3 100%);
+  }
+}
+
 .slider__container {
   display: flex;
   align-items: center;

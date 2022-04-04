@@ -11,6 +11,10 @@ import '../blocks/project/page-telephony/page-telephony.js';
 import '../blocks/project/popular-tarif/popular-tarif.js';
 import '../blocks/project/page-support/page-support.js';
 import '../blocks/project/page-magazine/page-magazine.js';
+import '../blocks/project/page-business/page-business.js';
+import '../blocks/project/page-faq/page-faq.js';
+import '../blocks/project/page-contacts/page-contacts.js';
+import '../blocks/project/page-detail/page-detail.js';
 
 
 // Плавный скол с навигации

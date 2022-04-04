@@ -17,12 +17,15 @@
 .breadcrumbs__container {
   display: flex;
   margin-bottom: 29px;
-  p {
+  a {
     font-weight: 400;
     font-size: 12px;
+    text-decoration: none;
   }
 }
-
+.breadcrumbs__home_category {
+  padding-left: 13px;
+}
 .breadcrumbs__home {
   color: #8C94A8;
   padding-right: 13px;

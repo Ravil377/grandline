@@ -10,8 +10,8 @@ mixin popular-tarif(cards, menu, sliderClass, titul, sliderTabClass, tarif, menu
 				h2.popular-tarif__title!=titul
 				if link
 					a(href=href)!=link 
-			.popular-tarif__tabs.popular-tarif__tabs-js
-				ul(class=`swiper-wrapper ${sliderTabClass}`)
+			div(class=`${sliderClass}__tabs-js`).popular-tarif__tabs
+				ul(class=`swiper-wrapper`)
 					each item, idx in menu
 						li(class=`${idx === 0 ? 'popular-tarif__tab_active' : ''}`).swiper-slide!=item
 			if menuitems

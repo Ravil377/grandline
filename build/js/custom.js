@@ -1580,8 +1580,8 @@
     }
   };
 
-  function _extends$3() {
-    _extends$3 = Object.assign || function (target) {
+  function _extends$4() {
+    _extends$4 = Object.assign || function (target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
 
@@ -1595,7 +1595,7 @@
       return target;
     };
 
-    return _extends$3.apply(this, arguments);
+    return _extends$4.apply(this, arguments);
   }
   var Observer = {
     attach: function attach(target, options) {
@@ -1671,7 +1671,7 @@
     create: function create() {
       var swiper = this;
       bindModuleMethods(swiper, {
-        observer: _extends$3({}, Observer, {
+        observer: _extends$4({}, Observer, {
           observers: []
         })
       });
@@ -5466,8 +5466,8 @@
   Swiper.use([Resize, Observer$1]);
   var Swiper$1 = Swiper;
 
-  function _extends$2() {
-    _extends$2 = Object.assign || function (target) {
+  function _extends$3() {
+    _extends$3 = Object.assign || function (target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
 
@@ -5481,7 +5481,7 @@
       return target;
     };
 
-    return _extends$2.apply(this, arguments);
+    return _extends$3.apply(this, arguments);
   }
   var Navigation = {
     toggleEl: function toggleEl($el, disabled) {
@@ -5613,7 +5613,7 @@
     create: function create() {
       var swiper = this;
       bindModuleMethods(swiper, {
-        navigation: _extends$2({}, Navigation)
+        navigation: _extends$3({}, Navigation)
       });
     },
     on: {
@@ -5677,8 +5677,8 @@
     }
   };
 
-  function _extends$1() {
-    _extends$1 = Object.assign || function (target) {
+  function _extends$2() {
+    _extends$2 = Object.assign || function (target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
 
@@ -5692,7 +5692,7 @@
       return target;
     };
 
-    return _extends$1.apply(this, arguments);
+    return _extends$2.apply(this, arguments);
   }
   var Pagination = {
     update: function update() {
@@ -6007,7 +6007,7 @@
     create: function create() {
       var swiper = this;
       bindModuleMethods(swiper, {
-        pagination: _extends$1({
+        pagination: _extends$2({
           dynamicBulletIndex: 0
         }, Pagination)
       });
@@ -6071,8 +6071,8 @@
     }
   };
 
-  function _extends() {
-    _extends = Object.assign || function (target) {
+  function _extends$1() {
+    _extends$1 = Object.assign || function (target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
 
@@ -6086,7 +6086,7 @@
       return target;
     };
 
-    return _extends.apply(this, arguments);
+    return _extends$1.apply(this, arguments);
   }
   var Autoplay = {
     run: function run() {
@@ -6255,7 +6255,7 @@
     create: function create() {
       var swiper = this;
       bindModuleMethods(swiper, {
-        autoplay: _extends({}, Autoplay, {
+        autoplay: _extends$1({}, Autoplay, {
           running: false,
           paused: false
         })
@@ -6306,6 +6306,232 @@
     }
   };
 
+  function _extends() {
+    _extends = Object.assign || function (target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+
+      return target;
+    };
+
+    return _extends.apply(this, arguments);
+  }
+  var Thumbs = {
+    init: function init() {
+      var swiper = this;
+      var thumbsParams = swiper.params.thumbs;
+      if (swiper.thumbs.initialized) return false;
+      swiper.thumbs.initialized = true;
+      var SwiperClass = swiper.constructor;
+
+      if (thumbsParams.swiper instanceof SwiperClass) {
+        swiper.thumbs.swiper = thumbsParams.swiper;
+        extend(swiper.thumbs.swiper.originalParams, {
+          watchSlidesProgress: true,
+          slideToClickedSlide: false
+        });
+        extend(swiper.thumbs.swiper.params, {
+          watchSlidesProgress: true,
+          slideToClickedSlide: false
+        });
+      } else if (isObject(thumbsParams.swiper)) {
+        swiper.thumbs.swiper = new SwiperClass(extend({}, thumbsParams.swiper, {
+          watchSlidesVisibility: true,
+          watchSlidesProgress: true,
+          slideToClickedSlide: false
+        }));
+        swiper.thumbs.swiperCreated = true;
+      }
+
+      swiper.thumbs.swiper.$el.addClass(swiper.params.thumbs.thumbsContainerClass);
+      swiper.thumbs.swiper.on('tap', swiper.thumbs.onThumbClick);
+      return true;
+    },
+    onThumbClick: function onThumbClick() {
+      var swiper = this;
+      var thumbsSwiper = swiper.thumbs.swiper;
+      if (!thumbsSwiper) return;
+      var clickedIndex = thumbsSwiper.clickedIndex;
+      var clickedSlide = thumbsSwiper.clickedSlide;
+      if (clickedSlide && $(clickedSlide).hasClass(swiper.params.thumbs.slideThumbActiveClass)) return;
+      if (typeof clickedIndex === 'undefined' || clickedIndex === null) return;
+      var slideToIndex;
+
+      if (thumbsSwiper.params.loop) {
+        slideToIndex = parseInt($(thumbsSwiper.clickedSlide).attr('data-swiper-slide-index'), 10);
+      } else {
+        slideToIndex = clickedIndex;
+      }
+
+      if (swiper.params.loop) {
+        var currentIndex = swiper.activeIndex;
+
+        if (swiper.slides.eq(currentIndex).hasClass(swiper.params.slideDuplicateClass)) {
+          swiper.loopFix(); // eslint-disable-next-line
+
+          swiper._clientLeft = swiper.$wrapperEl[0].clientLeft;
+          currentIndex = swiper.activeIndex;
+        }
+
+        var prevIndex = swiper.slides.eq(currentIndex).prevAll("[data-swiper-slide-index=\"" + slideToIndex + "\"]").eq(0).index();
+        var nextIndex = swiper.slides.eq(currentIndex).nextAll("[data-swiper-slide-index=\"" + slideToIndex + "\"]").eq(0).index();
+        if (typeof prevIndex === 'undefined') slideToIndex = nextIndex;else if (typeof nextIndex === 'undefined') slideToIndex = prevIndex;else if (nextIndex - currentIndex < currentIndex - prevIndex) slideToIndex = nextIndex;else slideToIndex = prevIndex;
+      }
+
+      swiper.slideTo(slideToIndex);
+    },
+    update: function update(initial) {
+      var swiper = this;
+      var thumbsSwiper = swiper.thumbs.swiper;
+      if (!thumbsSwiper) return;
+      var slidesPerView = thumbsSwiper.params.slidesPerView === 'auto' ? thumbsSwiper.slidesPerViewDynamic() : thumbsSwiper.params.slidesPerView;
+      var autoScrollOffset = swiper.params.thumbs.autoScrollOffset;
+      var useOffset = autoScrollOffset && !thumbsSwiper.params.loop;
+
+      if (swiper.realIndex !== thumbsSwiper.realIndex || useOffset) {
+        var currentThumbsIndex = thumbsSwiper.activeIndex;
+        var newThumbsIndex;
+        var direction;
+
+        if (thumbsSwiper.params.loop) {
+          if (thumbsSwiper.slides.eq(currentThumbsIndex).hasClass(thumbsSwiper.params.slideDuplicateClass)) {
+            thumbsSwiper.loopFix(); // eslint-disable-next-line
+
+            thumbsSwiper._clientLeft = thumbsSwiper.$wrapperEl[0].clientLeft;
+            currentThumbsIndex = thumbsSwiper.activeIndex;
+          } // Find actual thumbs index to slide to
+
+
+          var prevThumbsIndex = thumbsSwiper.slides.eq(currentThumbsIndex).prevAll("[data-swiper-slide-index=\"" + swiper.realIndex + "\"]").eq(0).index();
+          var nextThumbsIndex = thumbsSwiper.slides.eq(currentThumbsIndex).nextAll("[data-swiper-slide-index=\"" + swiper.realIndex + "\"]").eq(0).index();
+
+          if (typeof prevThumbsIndex === 'undefined') {
+            newThumbsIndex = nextThumbsIndex;
+          } else if (typeof nextThumbsIndex === 'undefined') {
+            newThumbsIndex = prevThumbsIndex;
+          } else if (nextThumbsIndex - currentThumbsIndex === currentThumbsIndex - prevThumbsIndex) {
+            newThumbsIndex = thumbsSwiper.params.slidesPerGroup > 1 ? nextThumbsIndex : currentThumbsIndex;
+          } else if (nextThumbsIndex - currentThumbsIndex < currentThumbsIndex - prevThumbsIndex) {
+            newThumbsIndex = nextThumbsIndex;
+          } else {
+            newThumbsIndex = prevThumbsIndex;
+          }
+
+          direction = swiper.activeIndex > swiper.previousIndex ? 'next' : 'prev';
+        } else {
+          newThumbsIndex = swiper.realIndex;
+          direction = newThumbsIndex > swiper.previousIndex ? 'next' : 'prev';
+        }
+
+        if (useOffset) {
+          newThumbsIndex += direction === 'next' ? autoScrollOffset : -1 * autoScrollOffset;
+        }
+
+        if (thumbsSwiper.visibleSlidesIndexes && thumbsSwiper.visibleSlidesIndexes.indexOf(newThumbsIndex) < 0) {
+          if (thumbsSwiper.params.centeredSlides) {
+            if (newThumbsIndex > currentThumbsIndex) {
+              newThumbsIndex = newThumbsIndex - Math.floor(slidesPerView / 2) + 1;
+            } else {
+              newThumbsIndex = newThumbsIndex + Math.floor(slidesPerView / 2) - 1;
+            }
+          } else if (newThumbsIndex > currentThumbsIndex && thumbsSwiper.params.slidesPerGroup === 1) ;
+
+          thumbsSwiper.slideTo(newThumbsIndex, initial ? 0 : undefined);
+        }
+      } // Activate thumbs
+
+
+      var thumbsToActivate = 1;
+      var thumbActiveClass = swiper.params.thumbs.slideThumbActiveClass;
+
+      if (swiper.params.slidesPerView > 1 && !swiper.params.centeredSlides) {
+        thumbsToActivate = swiper.params.slidesPerView;
+      }
+
+      if (!swiper.params.thumbs.multipleActiveThumbs) {
+        thumbsToActivate = 1;
+      }
+
+      thumbsToActivate = Math.floor(thumbsToActivate);
+      thumbsSwiper.slides.removeClass(thumbActiveClass);
+
+      if (thumbsSwiper.params.loop || thumbsSwiper.params.virtual && thumbsSwiper.params.virtual.enabled) {
+        for (var i = 0; i < thumbsToActivate; i += 1) {
+          thumbsSwiper.$wrapperEl.children("[data-swiper-slide-index=\"" + (swiper.realIndex + i) + "\"]").addClass(thumbActiveClass);
+        }
+      } else {
+        for (var _i = 0; _i < thumbsToActivate; _i += 1) {
+          thumbsSwiper.slides.eq(swiper.realIndex + _i).addClass(thumbActiveClass);
+        }
+      }
+    }
+  };
+  var Thumbs$1 = {
+    name: 'thumbs',
+    params: {
+      thumbs: {
+        swiper: null,
+        multipleActiveThumbs: true,
+        autoScrollOffset: 0,
+        slideThumbActiveClass: 'swiper-slide-thumb-active',
+        thumbsContainerClass: 'swiper-container-thumbs'
+      }
+    },
+    create: function create() {
+      var swiper = this;
+      bindModuleMethods(swiper, {
+        thumbs: _extends({
+          swiper: null,
+          initialized: false
+        }, Thumbs)
+      });
+    },
+    on: {
+      beforeInit: function beforeInit(swiper) {
+        var thumbs = swiper.params.thumbs;
+        if (!thumbs || !thumbs.swiper) return;
+        swiper.thumbs.init();
+        swiper.thumbs.update(true);
+      },
+      slideChange: function slideChange(swiper) {
+        if (!swiper.thumbs.swiper) return;
+        swiper.thumbs.update();
+      },
+      update: function update(swiper) {
+        if (!swiper.thumbs.swiper) return;
+        swiper.thumbs.update();
+      },
+      resize: function resize(swiper) {
+        if (!swiper.thumbs.swiper) return;
+        swiper.thumbs.update();
+      },
+      observerUpdate: function observerUpdate(swiper) {
+        if (!swiper.thumbs.swiper) return;
+        swiper.thumbs.update();
+      },
+      setTransition: function setTransition(swiper, duration) {
+        var thumbsSwiper = swiper.thumbs.swiper;
+        if (!thumbsSwiper) return;
+        thumbsSwiper.setTransition(duration);
+      },
+      beforeDestroy: function beforeDestroy(swiper) {
+        var thumbsSwiper = swiper.thumbs.swiper;
+        if (!thumbsSwiper) return;
+
+        if (swiper.thumbs.swiperCreated && thumbsSwiper) {
+          thumbsSwiper.destroy();
+        }
+      }
+    }
+  };
+
   const burger = document.querySelector('.burger-js');
   const burgerMenu = document.querySelector('.burger__menu-js');
   const body = document.querySelector('.body');
@@ -6316,20 +6542,7 @@
   if (document.querySelector(burgerSwiper)) {
     new Swiper$1(burgerSwiper, {
       slidesPerView: 'auto',
-      spaceBetween: 32 // centeredSlidesBounds: true,
-      // navigation: {
-      //   nextEl: '.popular-tarif__button-right-js',
-      //   prevEl: '.popular-tarif__button-left-js',
-      // },
-      // breakpoints: {
-      //   992: {
-      //     slidesPerView: 3,
-      //   },
-      //   1200: {
-      //     slidesPerView: 4,
-      //   },
-      // }
-
+      spaceBetween: 32
     });
   }
 
@@ -6350,6 +6563,8 @@
 
   Swiper$1.use([Pagination$1, Autoplay$1]);
   const mainSlider = '.main-slider-js';
+  const businessSlider$1 = '.business-slider-js';
+  const magazineSlider = '.magazine-slider-js';
 
   if (document.querySelector(mainSlider)) {
     new Swiper$1(mainSlider, {
@@ -6366,116 +6581,89 @@
     });
   }
 
-  const tabs$1 = document.querySelector('.title__tabs-js');
-  const titleTabSlider = '.title__tabs-js';
-
-  if (document.querySelector(titleTabSlider)) {
-    new Swiper$1(titleTabSlider, {
-      slidesPerView: 'auto',
-      slideToClickedSlide: true,
-      spaceBetween: 5,
-      // centeredSlides: true,
-      centeredSlidesBounds: true
+  if (document.querySelector(businessSlider$1)) {
+    new Swiper$1(businessSlider$1, {
+      speed: 1000,
+      slidesPerView: 1,
+      spaceBetween: 1000,
+      pagination: {
+        el: ".slider__dots",
+        clickable: true
+      },
+      autoplay: {
+        delay: 5000
+      }
     });
   }
 
-  const changeActiveClass$1 = (e, container) => {
-    const tab = e.target;
-
-    if (tab.classList.contains('swiper-slide')) {
-      const prevTab = container.querySelector('.title__tab_active');
-      prevTab.classList.remove('title__tab_active');
-      tab.classList.add('title__tab_active');
-    } else {
-      return;
-    }
-  };
-
-  tabs$1 && tabs$1.addEventListener('click', e => changeActiveClass$1(e, tabs$1));
+  if (document.querySelector(magazineSlider)) {
+    new Swiper$1(magazineSlider, {
+      speed: 1000,
+      slidesPerView: 1,
+      spaceBetween: 1000,
+      pagination: {
+        el: ".slider__dots",
+        clickable: true
+      },
+      autoplay: {
+        delay: 5000
+      }
+    });
+  }
 
   Swiper$1.use([Navigation$1]);
-  const tarifSlider = '.popular-tarif__content-js';
-  const tabSlider = '.popular-tarif__tabs-js';
-  const tabEquipmentSlider = '.equipment__tabs-js';
-  const equipmentSlider = '.equipment__content-js';
+  var tarifSlider, tabTarifSlider, equipmentSlider, tabEquipmentSlider; // Главная
 
-  if (document.querySelector(tarifSlider)) {
-    new Swiper$1(tarifSlider, {
-      slidesPerView: 'auto',
-      spaceBetween: 32,
-      centeredSlidesBounds: true,
-      navigation: {
-        nextEl: '.popular-tarif__button-right-js',
-        prevEl: '.popular-tarif__button-left-js'
-      },
-      breakpoints: {
-        992: {
-          slidesPerView: 3
-        },
-        1200: {
-          slidesPerView: 4
-        }
-      }
-    });
-  }
+  tarifSlider = document.querySelector('.popular-tarif__content-js');
+  tabTarifSlider = document.querySelector('.popular-tarif__tabs-js');
+  equipmentSlider = document.querySelector('.equipment__content-js');
+  tabEquipmentSlider = document.querySelector('.equipment__tabs-js'); // Меняем активность у таба
 
-  if (document.querySelector(equipmentSlider)) {
-    new Swiper$1(equipmentSlider, {
-      slidesPerView: 'auto',
-      spaceBetween: 32,
-      centeredSlidesBounds: true,
-      navigation: {
-        nextEl: '.equipment__button-right-js',
-        prevEl: '.equipment__button-left-js'
-      },
-      breakpoints: {
-        992: {
-          slidesPerView: 3
-        },
-        1200: {
-          slidesPerView: 4
-        }
-      }
-    });
-  }
-
-  if (document.querySelector(tabSlider)) {
-    new Swiper$1(tabSlider, {
-      slidesPerView: 'auto',
-      slideToClickedSlide: true,
-      spaceBetween: 5,
-      // centeredSlides: true,
-      centeredSlidesBounds: true
-    });
-  }
-
-  if (document.querySelector(tabEquipmentSlider)) {
-    new Swiper$1(tabEquipmentSlider, {
-      slidesPerView: 'auto',
-      slideToClickedSlide: true,
-      spaceBetween: 5,
-      // centeredSlides: true,
-      centeredSlidesBounds: true
-    });
-  }
-
-  const tabs = document.querySelector('.popular-tarif__tabs-js');
-  const tabsEquipment = document.querySelector('.equipment__content-js'); // const '.overlay-js'
-
-  const changeActiveClass = (e, container) => {
+  const changeActiveClass$1 = (e, tabClass, activeClass = 'popular-tarif') => {
+    const container = document.querySelector(`.${tabClass}__tabs-js`);
     const tab = e.target;
 
     if (tab.classList.contains('swiper-slide')) {
-      const prevTab = container.querySelector('.popular-tarif__tab_active');
-      prevTab.classList.remove('popular-tarif__tab_active');
-      tab.classList.add('popular-tarif__tab_active');
+      const prevTab = container.querySelector(`.${activeClass}__tab_active`);
+      prevTab.classList.remove(`${activeClass}__tab_active`);
+      tab.classList.add(`${activeClass}__tab_active`);
     } else {
       return;
     }
-  };
+  }; // Вешаем слайдер на табы
 
-  tabs && tabs.addEventListener('click', e => changeActiveClass(e, tabs));
-  tabsEquipment && tabsEquipment.addEventListener('click', e => changeActiveClass(e, tabsEquipment));
+
+  const sliderTab = (tabClass, active) => {
+    const tab = document.querySelector(`.${tabClass}__tabs-js`);
+    tab.addEventListener('click', e => changeActiveClass$1(e, tabClass, active));
+    return new Swiper$1(`.${tabClass}__tabs-js`, {
+      slidesPerView: 'auto',
+      slideToClickedSlide: true,
+      spaceBetween: 5,
+      centeredSlidesBounds: true
+    });
+  }; // Вешаем слайдер на карты
+
+  const sliderCard = slider => {
+    return new Swiper$1(`.${slider}__content-js`, {
+      slidesPerView: 'auto',
+      spaceBetween: 32,
+      centeredSlidesBounds: true,
+      navigation: {
+        nextEl: `.${slider}__button-right-js`,
+        prevEl: `.${slider}__button-left-js`
+      },
+      breakpoints: {
+        992: {
+          slidesPerView: 3
+        },
+        1200: {
+          slidesPerView: 4
+        }
+      }
+    });
+  }; // Проверяем присутствие кнопки дизаблед и отключаем оверлей у слайдера
+
   const overlayDisabled = () => {
     const btns = document.querySelectorAll('.popular-tarif__button-right');
     btns.forEach(btn => {
@@ -6484,6 +6672,10 @@
       btnDisabled ? overlay.classList.add('overlay_disabled') : overlay.classList.remove('overlay_disabled');
     });
   };
+  if (tarifSlider) sliderCard('popular-tarif');
+  if (tabTarifSlider) sliderTab('popular-tarif');
+  if (equipmentSlider) sliderCard('equipment');
+  if (tabEquipmentSlider) sliderTab('equipment'); // Если есть кнопка следующий слайд вешаем слушатель на ресайз
 
   if (document.querySelector('.popular-tarif__button-right')) {
     window.addEventListener(`resize`, event => {
@@ -6492,54 +6684,20 @@
     overlayDisabled();
   }
 
-  Swiper$1.use([Navigation$1]);
-  const internetSlider = '.internet__content-js';
+  let newsSlider, faqSlider, swiperTabNewsSlider, swiperTabFaqSlider;
+  newsSlider = document.querySelector('.news__tabs-js');
+  faqSlider = document.querySelector('.faq__tabs-js');
+  if (newsSlider) sliderTab('news', swiperTabNewsSlider);
+  if (faqSlider) sliderTab('faq', swiperTabFaqSlider);
 
-  if (document.querySelector(internetSlider)) {
-    new Swiper$1(internetSlider, {
-      slidesPerView: 'auto',
-      spaceBetween: 32,
-      centeredSlidesBounds: true,
-      navigation: {
-        nextEl: '.internet__button-right-js',
-        prevEl: '.internet__button-left-js'
-      },
-      breakpoints: {
-        992: {
-          slidesPerView: 3
-        },
-        1200: {
-          slidesPerView: 4
-        }
-      }
-    });
-  }
-
+  let internetSlider;
+  internetSlider = document.querySelector('.internet__content-js');
+  if (internetSlider) swiperInternetSlider = sliderCard('internet');
   overlayDisabled();
 
-  Swiper$1.use([Navigation$1]);
-  const telephonySlider = '.telephony__content-js';
-
-  if (document.querySelector(telephonySlider)) {
-    new Swiper$1(telephonySlider, {
-      slidesPerView: 'auto',
-      spaceBetween: 32,
-      centeredSlidesBounds: true,
-      navigation: {
-        nextEl: '.telephony__button-right-js',
-        prevEl: '.telephony__button-left-js'
-      },
-      breakpoints: {
-        992: {
-          slidesPerView: 3
-        },
-        1200: {
-          slidesPerView: 4
-        }
-      }
-    });
-  }
-
+  let telephonySlider;
+  telephonySlider = document.querySelector('.telephony__content-js');
+  if (telephonySlider) swiperTelephonySlider = sliderCard('telephony');
   overlayDisabled();
 
   const supportForm = document.querySelector('.support__form-js');
@@ -6548,56 +6706,18 @@
 
     if (input) {
       input.classList.remove('form__placeholder-container_active');
-    } // .closest('.support__placeholder-container')
-
+    }
   });
 
-  Swiper$1.use([Navigation$1]);
-  const magazineTopSaleSlider = '.top-sale__content-js';
-  const magazineSlider = '.magazine__content-js';
+  let magazineTopSlider, magazineEquipmentSlider, tabMagazineEquipmentSlider;
+  magazineTopSlider = document.querySelector('.top-sale__content-js');
+  magazineEquipmentSlider = document.querySelector('.magazine__content-js');
+  tabMagazineEquipmentSlider = document.querySelector('.magazine__tabs-js');
   const tab2 = document.querySelector('.magazine__tabs2-js');
-
-  if (document.querySelector(magazineTopSaleSlider)) {
-    new Swiper$1(magazineTopSaleSlider, {
-      slidesPerView: 'auto',
-      spaceBetween: 32,
-      centeredSlidesBounds: true,
-      navigation: {
-        nextEl: '.top-sale__button-left-js',
-        prevEl: '.top-sale__button-right-js'
-      },
-      breakpoints: {
-        992: {
-          slidesPerView: 3
-        },
-        1200: {
-          slidesPerView: 4
-        }
-      }
-    });
-  }
-
-  if (document.querySelector(magazineSlider)) {
-    new Swiper$1(magazineSlider, {
-      slidesPerView: 'auto',
-      spaceBetween: 32,
-      centeredSlidesBounds: true,
-      navigation: {
-        nextEl: '.magazine__button-left-js',
-        prevEl: '.magazine__button-right-js'
-      },
-      breakpoints: {
-        992: {
-          slidesPerView: 3
-        },
-        1200: {
-          slidesPerView: 4
-        }
-      }
-    });
-  }
-
-  tab2.addEventListener('click', e => {
+  if (magazineTopSlider) swiperMagazineTopSlider = sliderCard('top-sale');
+  if (magazineEquipmentSlider) swiperMagazineEquipmentSlider = sliderCard('magazine');
+  if (tabMagazineEquipmentSlider) swiperTabMagazineEquipmentSlider = sliderTab('magazine');
+  tab2 && tab2.addEventListener('click', e => {
     const tab = e.target;
     const isTab = tab.classList.contains('tab2__item-js');
 
@@ -6609,5 +6729,100 @@
     }
   });
   overlayDisabled();
+
+  let businessSlider, tabBusinessSlider;
+  businessSlider = document.querySelector('.business__content-js');
+  tabBusinessSlider = document.querySelector('.business__tabs-js');
+  if (businessSlider) swiperBusinessSlider = sliderCard('business');
+  if (tabBusinessSlider) swiperTabBusinessSlider = sliderTab('business');
+  overlayDisabled();
+
+  const faq = document.querySelector('.faq__lists-js');
+
+  const faqClose = () => {
+    const active = faq.querySelector('.faq__item_open');
+    active && active.classList.remove('faq__item_open');
+  };
+
+  const faqOpen = e => {
+    const item = e.target;
+    const isQuestion = item.closest('.faq__item').classList.contains('faq__item');
+
+    if (isQuestion) {
+      if (item.closest('.faq__item').classList.contains('faq__item_open')) {
+        item.closest('.faq__item').classList.remove('faq__item_open');
+      } else {
+        faqClose();
+        item.closest('.faq__item').classList.add('faq__item_open');
+      }
+    }
+  };
+
+  faq && faq.addEventListener('click', e => faqOpen(e));
+
+  if (document.querySelector('[id="map"]')) ymaps.ready(init);
+
+  function init() {
+    let map = new ymaps.Map('map', {
+      center: [55.83281781149385, 37.92633620377941],
+      zoom: 16.5
+    });
+    let placemark = new ymaps.Placemark([55.83281781149385, 37.92633620377941], {
+      hintContent: '',
+      balloonContent: ''
+    }, {
+      // Опции.
+      // Необходимо указать данный тип макета.
+      iconLayout: 'default#image',
+      // Своё изображение иконки метки.
+      iconImageHref: 'img/content/placemark.png',
+      // Размеры метки.
+      iconImageSize: [38, 55],
+      // Смещение левого верхнего угла иконки относительно
+      // её "ножки" (точки привязки).
+      iconImageOffset: [-25, -40]
+    });
+    map.geoObjects.add(placemark);
+  }
+
+  Swiper$1.use([Pagination$1, Thumbs$1]);
+  const tab = document.querySelector('.detail__info-list-js');
+  const moreBtn = document.querySelector('.detail__info-content-text-more-js');
+
+  if (document.querySelector('.detail__big-slider-js')) {
+    const cardThumbs = new Swiper$1(".detail__small-slider-js", {
+      slidesPerView: 4,
+      spaceBetween: 31,
+      freeMode: true,
+      watchSlidesProgress: true
+    });
+    new Swiper$1(".detail__big-slider-js", {
+      spaceBetween: 10,
+      thumbs: {
+        swiper: cardThumbs
+      }
+    });
+  } // Меняем активность у таба
+
+
+  const changeActiveClass = (e, activeClass = 'detail__info-item_active') => {
+    const container = document.querySelector(`.detail__info-list-js`);
+    const tab = e.target;
+
+    if (tab.classList.contains('detail__info-item')) {
+      const prevTab = container.querySelector(`.${activeClass}`);
+      prevTab.classList.remove(`${activeClass}`);
+      tab.classList.add(`${activeClass}`);
+    } else {
+      return;
+    }
+  };
+
+  tab && tab.addEventListener('click', e => changeActiveClass(e));
+  moreBtn && moreBtn.addEventListener('click', () => {
+    const textContainer = document.querySelector('.detail__info-content-text-container');
+    textContainer.classList.toggle('detail__info-content-text_open');
+    moreBtn.textContent === 'Свернуть' ? moreBtn.textContent = 'Развернуть полностью' : moreBtn.textContent = 'Свернуть';
+  });
 
 }));
