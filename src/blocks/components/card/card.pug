@@ -11,6 +11,10 @@ mixin card(card, tarif)
 		var tarif = tarif || true;
 		var img = card.img || '';
 		var id = card.id || '';
+		var recommended = card.recommended || '';
+		var range = card.range || '';
+		var speed = card.speed || '';
+		var count = card.count || '';
 	div(class=`card ${hit ? 'card__hit' : ''} ${(tarif === 'equipment') ? 'card__equipment' : ''}`)&attributes(attributes)
 		if (tarif === 'tarif')
 			.card__hit-container Хит продаж
@@ -35,5 +39,15 @@ mixin card(card, tarif)
 			p.card__equipment-title!=title
 		if (pack)
 			.card__pack!=pack
+		if (recommended)
+			ul.card__recommeded-list 
+				each tarif in recommended
+					li.card__recommeded-item!=tarif
+			.card__detail Частотный диапазон 
+				span!=range
+			.card__detail Скорость Wi-Fi
+				span!=speed
+			.card__detail Кол-во устройств
+				span!=count
 		.card__price!=price
 		a(href=href target="_blank" data-id=id).card__button!=button

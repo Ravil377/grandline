@@ -104,6 +104,7 @@
     font-size: 36px;
     line-height: 44px;
     color: var(--text);
+    margin-top: 40px;
     margin-bottom: 17px;
     span {
         font-size: 22px;
@@ -160,10 +161,39 @@
     font-size: 22px;
     line-height: 28px;
     color: var(--text);
+    margin: 0;
     margin-bottom: 0;
     // margin-bottom: 17px;
 }
 .card__equipment {
     min-height: 571px;
     height: auto;
+}
+.card__recommeded-list {
+    @include ul-none();
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 14px;
+    margin-bottom: 8px;
+}
+.card__detail {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #747983;
+    display: flex;
+    span {
+        margin-left: auto;
+        color: #061A29;
+    }
+}
+.card__recommeded-item {
+    margin: 1px;
+    background: #09D95A;
+    padding: 2px 7px;
+    border-radius: var(--radius);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #FFFFFF;
 }
