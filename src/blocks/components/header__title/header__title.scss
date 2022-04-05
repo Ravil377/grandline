@@ -16,6 +16,7 @@
 }
 .breadcrumbs__container {
   display: flex;
+  flex-wrap: wrap;
   margin-bottom: 29px;
   a {
     font-weight: 400;
@@ -23,14 +24,12 @@
     text-decoration: none;
   }
 }
-.breadcrumbs__home_category {
-  padding-left: 13px;
-}
 .breadcrumbs__home {
   color: #8C94A8;
   padding-right: 13px;
   position: relative;
   margin: 0;
+  margin-right: 13px;
   &::before {
     content: '';
     position: absolute;
@@ -45,7 +44,6 @@
 .breadcrumbs__page {
   margin: 0;
   color: #C6CDD9;
-  margin-left: 13px;
 }
 .title__tabs {
   overflow: hidden;
