@@ -5,3 +5,7 @@ supportForm && supportForm.addEventListener('click', (e) => {
     input.classList.remove('form__placeholder-container_active');
   }
 })
+
+$(function(){
+  $("#phone").mask("+7 (999) 999-9999");
+});

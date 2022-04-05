@@ -15,6 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css" />
     <link rel="stylesheet" href="css/style.min.css">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#fffff">
@@ -152,7 +153,7 @@
         <div class="container popular-tarif__container overlay-js">
             <div class="popular-tarif__content popular-tarif__content-js">
                 <div class="popular-tarif__wrapper swiper-wrapper">
-                    <div class="card   swiper-slide">
+                    <div class="card    swiper-slide">
                         <div class="card__hit-container">Хит продаж</div>
                         <div class="card__img-container"><svg class="card__img">
                                 <use xlink:href="img/symbols.svg#icon_tv"></use>
@@ -162,7 +163,7 @@
                         <div class="card__pack">В пакет входит подписка на сервисы Netflx, Megogo и Wink</div>
                         <div class="card__price">950 <span>₽/мес</span></div><a class="card__button" href="#" target="_blank" data-id="connection">Подключить</a>
                     </div>
-                    <div class="card card__hit  swiper-slide">
+                    <div class="card card_height card__hit  swiper-slide">
                         <div class="card__hit-container">Хит продаж</div>
                         <div class="card__img-container"><svg class="card__img">
                                 <use xlink:href="img/symbols.svg#icon_internet"></use>
@@ -171,7 +172,7 @@
                         <div class="card__desc   "><span>до 100</span> Мбит/с</div>
                         <div class="card__price">520 <span>₽/мес</span></div><a class="card__button" href="#" target="_blank" data-id="connection">Подключить</a>
                     </div>
-                    <div class="card   swiper-slide">
+                    <div class="card    swiper-slide">
                         <div class="card__hit-container">Хит продаж</div>
                         <div class="card__img-container"><svg class="card__img card__img_phone">
                                 <use xlink:href="img/symbols.svg#icon_tel"></use>
@@ -181,7 +182,7 @@
                         <div class="card__pack">Стоимость превышения: <span>0 ₽ / мин.</span></div>
                         <div class="card__price">650 <span>₽/мес</span></div><a class="card__button" href="#" target="_blank" data-id="connection">Подключить</a>
                     </div>
-                    <div class="card   swiper-slide">
+                    <div class="card    swiper-slide">
                         <div class="card__hit-container">Хит продаж</div>
                         <div class="card__img-container"><svg class="card__img">
                                 <use xlink:href="img/symbols.svg#icon_cctv2"></use>
@@ -225,25 +226,25 @@
         <div class="container popular-tarif__container overlay-js">
             <div class="popular-tarif__content equipment__content-js">
                 <div class="popular-tarif__wrapper swiper-wrapper">
-                    <div class="card  card__equipment swiper-slide"><img class="card__equipment-img" src="img/content/dir806.jpg" alt="D-Link DIR-806" />
+                    <div class="card   card__equipment swiper-slide"><img class="card__equipment-img" src="img/content/dir806.jpg" alt="D-Link DIR-806" />
                         <p class="card__equipment-type">Wi-Fi роутеры</p>
                         <p class="card__equipment-title">D-Link DIR-806</p>
                         <div class="card__pack">Начальный уровень</div>
                         <div class="card__price">2850 <span>₽</span></div><a class="card__button" href="#" target="_blank" data-id="connection">Заказать</a>
                     </div>
-                    <div class="card  card__equipment swiper-slide"><img class="card__equipment-img" src="img/content/sbox.jpg" alt="TVIP S-Box v.530" />
+                    <div class="card   card__equipment swiper-slide"><img class="card__equipment-img" src="img/content/sbox.jpg" alt="TVIP S-Box v.530" />
                         <p class="card__equipment-type">ТВ-приставки</p>
                         <p class="card__equipment-title">TVIP S-Box v.530</p>
                         <div class="card__pack">Можно приобрести в рассрочку: 3 месяца - 1800 <span>₽/мес</span> 6 месяцев - 950 <span>₽/мес</span></div>
                         <div class="card__price">4990 <span>₽</span></div><a class="card__button" href="#" target="_blank" data-id="connection">Заказать</a>
                     </div>
-                    <div class="card  card__equipment swiper-slide"><img class="card__equipment-img" src="img/content/dir825.jpg" alt="D-Link DIR-825" />
+                    <div class="card   card__equipment swiper-slide"><img class="card__equipment-img" src="img/content/dir825.jpg" alt="D-Link DIR-825" />
                         <p class="card__equipment-type">Wi-Fi роутеры</p>
                         <p class="card__equipment-title">D-Link DIR-825</p>
                         <div class="card__pack">Продвинутый уровень</div>
                         <div class="card__price">4000 <span>₽</span></div><a class="card__button" href="#" target="_blank" data-id="connection">Заказать</a>
                     </div>
-                    <div class="card  card__equipment swiper-slide"><img class="card__equipment-img" src="img/content/8100.jpg" alt="DCS-8100LH" />
+                    <div class="card   card__equipment swiper-slide"><img class="card__equipment-img" src="img/content/8100.jpg" alt="DCS-8100LH" />
                         <p class="card__equipment-type">Видеонаблюдение</p>
                         <p class="card__equipment-title">DCS-8100LH</p>
                         <div class="card__price">9 095 <span>₽</span></div><a class="card__button" href="#" target="_blank" data-id="connection">Заказать</a>
@@ -380,7 +381,9 @@
                 <div class="modal__desc">Пожалуйста, попробуйте заполнить форму еще раз</div><button class="btn form_btn form_return-btn-js" data-id="return" type="button">Вернуться на сайт</button>
             </div>
         </div>
-    </div><script src="js/custom.js"></script>
+    </div><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script><script src="js/custom.js"></script>
 </body>
 
 </html>

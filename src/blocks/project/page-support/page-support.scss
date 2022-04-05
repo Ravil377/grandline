@@ -74,6 +74,16 @@
   background: var(--background-gray2);
 }
 
+.form__placeholder-container input:focus + label, .form__placeholder-container input:not(:placeholder-shown) + label {
+  top: 17px;
+  left: 15px;
+  // background: var(--background-gray2);
+  // border-radius: var(--radius);
+  // -ms-transform: translateX(0);
+  //     transform: translateX(0);
+  // padding: 2px 10px;
+}
+
 .form__placeholder-container textarea:focus + label, .form__placeholder-container textarea:not(:placeholder-shown) + label {
   top: -13px;
   left: 0;
@@ -113,6 +123,14 @@
 }
 
 .form__placeholder-container_active.form__placeholder-container label {
+  // font-weight: 400;
+  // font-size: 16px;
+  // color: var(--placeholder);
+  // top: 50%;
+  // transform: translateY(-50%);
+}
+
+.form__placeholder-container label {
   font-weight: 400;
   font-size: 16px;
   color: var(--placeholder);

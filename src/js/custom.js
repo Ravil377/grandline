@@ -15,6 +15,7 @@ import '../blocks/project/page-business/page-business.js';
 import '../blocks/project/page-faq/page-faq.js';
 import '../blocks/project/page-contacts/page-contacts.js';
 import '../blocks/project/page-detail/page-detail.js';
+import '../blocks/project/page-catalog/page-catalog.js';
 
 
 // Плавный скол с навигации

@@ -15,7 +15,7 @@ mixin card(card, tarif)
 		var range = card.range || '';
 		var speed = card.speed || '';
 		var count = card.count || '';
-	div(class=`card ${hit ? 'card__hit' : ''} ${(tarif === 'equipment') ? 'card__equipment' : ''}`)&attributes(attributes)
+	div(class=`card ${type === 'internet' ? 'card_height' : ''} ${hit ? 'card__hit' : ''} ${(tarif === 'equipment') ? 'card__equipment' : ''}`)&attributes(attributes)
 		if (tarif === 'tarif')
 			.card__hit-container Хит продаж
 			.card__img-container
@@ -40,6 +40,7 @@ mixin card(card, tarif)
 		if (pack)
 			.card__pack!=pack
 		if (recommended)
+			p.card__recommeded-title Подходящие тарифы:
 			ul.card__recommeded-list 
 				each tarif in recommended
 					li.card__recommeded-item!=tarif

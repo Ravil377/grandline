@@ -60,9 +60,10 @@
 .detail-news__list {
   grid-area: lastnews;
   @include ul-none();
-  background: rgba(96%, 96%, 98%, .18);
+  background: #F4F6FB;
   padding: 21px 25px;
   margin-bottom: 32px;
+	border-radius: var(--radius);
 	order: 2;
 	@media (min-width: $screen-lg) {
 		order: 1;
@@ -86,6 +87,8 @@
   line-height: 27px;
   color: var(--text);
   margin-bottom: 28.5px;
+	padding-bottom: 15px;
+	border-bottom: 2px solid #FFFFFF;
 }
 .detail-news__news {
   margin-bottom: 30px;

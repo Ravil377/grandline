@@ -391,7 +391,7 @@
     return a;
   }
 
-  function $(selector, context) {
+  function $$1(selector, context) {
     var window = getWindow();
     var document = getDocument();
     var arr = [];
@@ -434,7 +434,7 @@
     return new Dom7(arrayUnique(arr));
   }
 
-  $.fn = Dom7.prototype;
+  $$1.fn = Dom7.prototype;
 
   function addClass() {
     for (var _len = arguments.length, classes = new Array(_len), _key = 0; _key < _len; _key++) {
@@ -574,12 +574,12 @@
         eventData.unshift(e);
       }
 
-      if ($(target).is(targetSelector)) listener.apply(target, eventData);else {
-        var _parents = $(target).parents(); // eslint-disable-line
+      if ($$1(target).is(targetSelector)) listener.apply(target, eventData);else {
+        var _parents = $$1(target).parents(); // eslint-disable-line
 
 
         for (var k = 0; k < _parents.length; k += 1) {
-          if ($(_parents[k]).is(targetSelector)) listener.apply(_parents[k], eventData);
+          if ($$1(_parents[k]).is(targetSelector)) listener.apply(_parents[k], eventData);
         }
       }
     }
@@ -833,7 +833,7 @@
 
   function filter(callback) {
     var result = arrayFilter(this, callback);
-    return $(result);
+    return $$1(result);
   }
 
   function html(html) {
@@ -872,7 +872,7 @@
       if (el.matches) return el.matches(selector);
       if (el.webkitMatchesSelector) return el.webkitMatchesSelector(selector);
       if (el.msMatchesSelector) return el.msMatchesSelector(selector);
-      compareWith = $(selector);
+      compareWith = $$1(selector);
 
       for (i = 0; i < compareWith.length; i += 1) {
         if (compareWith[i] === el) return true;
@@ -924,16 +924,16 @@
     var length = this.length;
 
     if (index > length - 1) {
-      return $([]);
+      return $$1([]);
     }
 
     if (index < 0) {
       var returnIndex = length + index;
-      if (returnIndex < 0) return $([]);
-      return $([this[returnIndex]]);
+      if (returnIndex < 0) return $$1([]);
+      return $$1([this[returnIndex]]);
     }
 
-    return $([this[index]]);
+    return $$1([this[index]]);
   }
 
   function append() {
@@ -992,36 +992,36 @@
   function next(selector) {
     if (this.length > 0) {
       if (selector) {
-        if (this[0].nextElementSibling && $(this[0].nextElementSibling).is(selector)) {
-          return $([this[0].nextElementSibling]);
+        if (this[0].nextElementSibling && $$1(this[0].nextElementSibling).is(selector)) {
+          return $$1([this[0].nextElementSibling]);
         }
 
-        return $([]);
+        return $$1([]);
       }
 
-      if (this[0].nextElementSibling) return $([this[0].nextElementSibling]);
-      return $([]);
+      if (this[0].nextElementSibling) return $$1([this[0].nextElementSibling]);
+      return $$1([]);
     }
 
-    return $([]);
+    return $$1([]);
   }
 
   function nextAll(selector) {
     var nextEls = [];
     var el = this[0];
-    if (!el) return $([]);
+    if (!el) return $$1([]);
 
     while (el.nextElementSibling) {
       var _next = el.nextElementSibling; // eslint-disable-line
 
       if (selector) {
-        if ($(_next).is(selector)) nextEls.push(_next);
+        if ($$1(_next).is(selector)) nextEls.push(_next);
       } else nextEls.push(_next);
 
       el = _next;
     }
 
-    return $(nextEls);
+    return $$1(nextEls);
   }
 
   function prev(selector) {
@@ -1029,36 +1029,36 @@
       var el = this[0];
 
       if (selector) {
-        if (el.previousElementSibling && $(el.previousElementSibling).is(selector)) {
-          return $([el.previousElementSibling]);
+        if (el.previousElementSibling && $$1(el.previousElementSibling).is(selector)) {
+          return $$1([el.previousElementSibling]);
         }
 
-        return $([]);
+        return $$1([]);
       }
 
-      if (el.previousElementSibling) return $([el.previousElementSibling]);
-      return $([]);
+      if (el.previousElementSibling) return $$1([el.previousElementSibling]);
+      return $$1([]);
     }
 
-    return $([]);
+    return $$1([]);
   }
 
   function prevAll(selector) {
     var prevEls = [];
     var el = this[0];
-    if (!el) return $([]);
+    if (!el) return $$1([]);
 
     while (el.previousElementSibling) {
       var _prev = el.previousElementSibling; // eslint-disable-line
 
       if (selector) {
-        if ($(_prev).is(selector)) prevEls.push(_prev);
+        if ($$1(_prev).is(selector)) prevEls.push(_prev);
       } else prevEls.push(_prev);
 
       el = _prev;
     }
 
-    return $(prevEls);
+    return $$1(prevEls);
   }
 
   function parent(selector) {
@@ -1067,14 +1067,14 @@
     for (var i = 0; i < this.length; i += 1) {
       if (this[i].parentNode !== null) {
         if (selector) {
-          if ($(this[i].parentNode).is(selector)) parents.push(this[i].parentNode);
+          if ($$1(this[i].parentNode).is(selector)) parents.push(this[i].parentNode);
         } else {
           parents.push(this[i].parentNode);
         }
       }
     }
 
-    return $(parents);
+    return $$1(parents);
   }
 
   function parents(selector) {
@@ -1085,7 +1085,7 @@
 
       while (_parent) {
         if (selector) {
-          if ($(_parent).is(selector)) parents.push(_parent);
+          if ($$1(_parent).is(selector)) parents.push(_parent);
         } else {
           parents.push(_parent);
         }
@@ -1094,14 +1094,14 @@
       }
     }
 
-    return $(parents);
+    return $$1(parents);
   }
 
   function closest(selector) {
     var closest = this; // eslint-disable-line
 
     if (typeof selector === 'undefined') {
-      return $([]);
+      return $$1([]);
     }
 
     if (!closest.is(selector)) {
@@ -1122,7 +1122,7 @@
       }
     }
 
-    return $(foundElements);
+    return $$1(foundElements);
   }
 
   function children(selector) {
@@ -1132,13 +1132,13 @@
       var childNodes = this[i].children;
 
       for (var j = 0; j < childNodes.length; j += 1) {
-        if (!selector || $(childNodes[j]).is(selector)) {
+        if (!selector || $$1(childNodes[j]).is(selector)) {
           children.push(childNodes[j]);
         }
       }
     }
 
-    return $(children);
+    return $$1(children);
   }
 
   function remove() {
@@ -1188,7 +1188,7 @@
     remove: remove
   };
   Object.keys(Methods).forEach(function (methodName) {
-    Object.defineProperty($.fn, methodName, {
+    Object.defineProperty($$1.fn, methodName, {
       value: Methods[methodName],
       writable: true
     });
@@ -2314,7 +2314,7 @@
       slide.progress = rtl ? -slideProgress : slideProgress;
     }
 
-    swiper.visibleSlides = $(swiper.visibleSlides);
+    swiper.visibleSlides = $$1(swiper.visibleSlides);
   }
 
   function updateProgress(translate) {
@@ -2501,7 +2501,7 @@
   function updateClickedSlide(e) {
     var swiper = this;
     var params = swiper.params;
-    var slide = $(e.target).closest("." + params.slideClass)[0];
+    var slide = $$1(e.target).closest("." + params.slideClass)[0];
     var slideFound = false;
     var slideIndex;
 
@@ -2519,7 +2519,7 @@
       swiper.clickedSlide = slide;
 
       if (swiper.virtual && swiper.params.virtual.enabled) {
-        swiper.clickedIndex = parseInt($(slide).attr('data-swiper-slide-index'), 10);
+        swiper.clickedIndex = parseInt($$1(slide).attr('data-swiper-slide-index'), 10);
       } else {
         swiper.clickedIndex = slideIndex;
       }
@@ -3176,7 +3176,7 @@
 
     if (params.loop) {
       if (swiper.animating) return;
-      realIndex = parseInt($(swiper.clickedSlide).attr('data-swiper-slide-index'), 10);
+      realIndex = parseInt($$1(swiper.clickedSlide).attr('data-swiper-slide-index'), 10);
 
       if (params.centeredSlides) {
         if (slideToIndex < swiper.loopedSlides - slidesPerView / 2 || slideToIndex > swiper.slides.length - swiper.loopedSlides + slidesPerView / 2) {
@@ -3226,7 +3226,7 @@
 
       if (blankSlidesNum !== params.slidesPerGroup) {
         for (var i = 0; i < blankSlidesNum; i += 1) {
-          var blankNode = $(document.createElement('div')).addClass(params.slideClass + " " + params.slideBlankClass);
+          var blankNode = $$1(document.createElement('div')).addClass(params.slideClass + " " + params.slideBlankClass);
           $wrapperEl.append(blankNode);
         }
 
@@ -3245,7 +3245,7 @@
     var prependSlides = [];
     var appendSlides = [];
     slides.each(function (el, index) {
-      var slide = $(el);
+      var slide = $$1(el);
 
       if (index < swiper.loopedSlides) {
         appendSlides.push(el);
@@ -3259,11 +3259,11 @@
     });
 
     for (var _i = 0; _i < appendSlides.length; _i += 1) {
-      $wrapperEl.append($(appendSlides[_i].cloneNode(true)).addClass(params.slideDuplicateClass));
+      $wrapperEl.append($$1(appendSlides[_i].cloneNode(true)).addClass(params.slideDuplicateClass));
     }
 
     for (var _i2 = prependSlides.length - 1; _i2 >= 0; _i2 -= 1) {
-      $wrapperEl.prepend($(prependSlides[_i2].cloneNode(true)).addClass(params.slideDuplicateClass));
+      $wrapperEl.prepend($$1(prependSlides[_i2].cloneNode(true)).addClass(params.slideDuplicateClass));
     }
   }
 
@@ -3566,7 +3566,7 @@
 
     var e = event;
     if (e.originalEvent) e = e.originalEvent;
-    var $targetEl = $(e.target);
+    var $targetEl = $$1(e.target);
 
     if (params.touchEventsTarget === 'wrapper') {
       if (!$targetEl.closest(swiper.wrapperEl).length) return;
@@ -3580,7 +3580,7 @@
     var swipingClassHasValue = !!params.noSwipingClass && params.noSwipingClass !== '';
 
     if (swipingClassHasValue && e.target && e.target.shadowRoot && event.path && event.path[0]) {
-      $targetEl = $(event.path[0]);
+      $targetEl = $$1(event.path[0]);
     }
 
     var noSwipingSelector = params.noSwipingSelector ? params.noSwipingSelector : "." + params.noSwipingClass;
@@ -3630,7 +3630,7 @@
       var preventDefault = true;
       if ($targetEl.is(data.focusableElements)) preventDefault = false;
 
-      if (document.activeElement && $(document.activeElement).is(data.focusableElements) && document.activeElement !== $targetEl[0]) {
+      if (document.activeElement && $$1(document.activeElement).is(data.focusableElements) && document.activeElement !== $targetEl[0]) {
         document.activeElement.blur();
       }
 
@@ -3706,7 +3706,7 @@
     }
 
     if (data.isTouchEvent && document.activeElement) {
-      if (e.target === document.activeElement && $(e.target).is(data.focusableElements)) {
+      if (e.target === document.activeElement && $$1(e.target).is(data.focusableElements)) {
         data.isMoved = true;
         swiper.allowClick = false;
         return;
@@ -4621,7 +4621,7 @@
       if (callback) callback();
     }
 
-    var isPicture = $(imageEl).parent('picture')[0];
+    var isPicture = $$1(imageEl).parent('picture')[0];
 
     if (!isPicture && (!imageEl.complete || !checkForComplete)) {
       if (src) {
@@ -4886,9 +4886,9 @@
       params = extend({}, params);
       if (el && !params.el) params.el = el;
 
-      if (params.el && $(params.el).length > 1) {
+      if (params.el && $$1(params.el).length > 1) {
         var swipers = [];
-        $(params.el).each(function (containerEl) {
+        $$1(params.el).each(function (containerEl) {
           var newParams = extend({}, params, {
             el: containerEl
           });
@@ -4962,7 +4962,7 @@
       } // Save Dom lib
 
 
-      swiper.$ = $; // Extend Swiper
+      swiper.$ = $$1; // Extend Swiper
 
       extend(swiper, {
         enabled: swiper.params.enabled,
@@ -4970,7 +4970,7 @@
         // Classes
         classNames: [],
         // Slides
-        slides: $(),
+        slides: $$1(),
         slidesGrid: [],
         snapGrid: [],
         slidesSizesGrid: [],
@@ -5258,7 +5258,7 @@
       var swiper = this;
       if (swiper.mounted) return true; // Find el
 
-      var $el = $(el || swiper.params.el);
+      var $el = $$1(el || swiper.params.el);
       el = $el[0];
 
       if (!el) {
@@ -5273,7 +5273,7 @@
 
       var getWrapper = function getWrapper() {
         if (el && el.shadowRoot && el.shadowRoot.querySelector) {
-          var res = $(el.shadowRoot.querySelector(getWrapperSelector())); // Children needs to return slot items
+          var res = $$1(el.shadowRoot.querySelector(getWrapperSelector())); // Children needs to return slot items
 
           res.children = function (options) {
             return $el.children(options);
@@ -5291,7 +5291,7 @@
       if ($wrapperEl.length === 0 && swiper.params.createElements) {
         var document = getDocument();
         var wrapper = document.createElement('div');
-        $wrapperEl = $(wrapper);
+        $wrapperEl = $$1(wrapper);
         wrapper.className = swiper.params.wrapperClass;
         $el.append(wrapper);
         $el.children("." + swiper.params.slideClass).each(function (slideEl) {
@@ -5546,7 +5546,7 @@
       var $prevEl;
 
       if (params.nextEl) {
-        $nextEl = $(params.nextEl);
+        $nextEl = $$1(params.nextEl);
 
         if (swiper.params.uniqueNavElements && typeof params.nextEl === 'string' && $nextEl.length > 1 && swiper.$el.find(params.nextEl).length === 1) {
           $nextEl = swiper.$el.find(params.nextEl);
@@ -5554,7 +5554,7 @@
       }
 
       if (params.prevEl) {
-        $prevEl = $(params.prevEl);
+        $prevEl = $$1(params.prevEl);
 
         if (swiper.params.uniqueNavElements && typeof params.prevEl === 'string' && $prevEl.length > 1 && swiper.$el.find(params.prevEl).length === 1) {
           $prevEl = swiper.$el.find(params.prevEl);
@@ -5649,7 +5649,7 @@
             $prevEl = _swiper$navigation4.$prevEl;
         var targetEl = e.target;
 
-        if (swiper.params.navigation.hideOnClick && !$(targetEl).is($prevEl) && !$(targetEl).is($nextEl)) {
+        if (swiper.params.navigation.hideOnClick && !$$1(targetEl).is($prevEl) && !$$1(targetEl).is($nextEl)) {
           if (swiper.pagination && swiper.params.pagination && swiper.params.pagination.clickable && (swiper.pagination.el === targetEl || swiper.pagination.el.contains(targetEl))) return;
           var isHidden;
 
@@ -5752,7 +5752,7 @@
 
         if ($el.length > 1) {
           bullets.each(function (bullet) {
-            var $bullet = $(bullet);
+            var $bullet = $$1(bullet);
             var bulletIndex = $bullet.index();
 
             if (bulletIndex === current) {
@@ -5909,7 +5909,7 @@
       });
       var params = swiper.params.pagination;
       if (!params.el) return;
-      var $el = $(params.el);
+      var $el = $$1(params.el);
       if ($el.length === 0) return;
 
       if (swiper.params.uniqueNavElements && typeof params.el === 'string' && $el.length > 1) {
@@ -5938,7 +5938,7 @@
       if (params.clickable) {
         $el.on('click', classesToSelector(params.bulletClass), function onClick(e) {
           e.preventDefault();
-          var index = $(this).index() * swiper.params.slidesPerGroup;
+          var index = $$1(this).index() * swiper.params.slidesPerGroup;
           if (swiper.params.loop) index += swiper.loopedSlides;
           swiper.slideTo(index);
         });
@@ -6055,7 +6055,7 @@
       click: function click(swiper, e) {
         var targetEl = e.target;
 
-        if (swiper.params.pagination.el && swiper.params.pagination.hideOnClick && swiper.pagination.$el.length > 0 && !$(targetEl).hasClass(swiper.params.pagination.bulletClass)) {
+        if (swiper.params.pagination.el && swiper.params.pagination.hideOnClick && swiper.pagination.$el.length > 0 && !$$1(targetEl).hasClass(swiper.params.pagination.bulletClass)) {
           if (swiper.navigation && (swiper.navigation.nextEl && targetEl === swiper.navigation.nextEl || swiper.navigation.prevEl && targetEl === swiper.navigation.prevEl)) return;
           var isHidden = swiper.pagination.$el.hasClass(swiper.params.pagination.hiddenClass);
 
@@ -6360,12 +6360,12 @@
       if (!thumbsSwiper) return;
       var clickedIndex = thumbsSwiper.clickedIndex;
       var clickedSlide = thumbsSwiper.clickedSlide;
-      if (clickedSlide && $(clickedSlide).hasClass(swiper.params.thumbs.slideThumbActiveClass)) return;
+      if (clickedSlide && $$1(clickedSlide).hasClass(swiper.params.thumbs.slideThumbActiveClass)) return;
       if (typeof clickedIndex === 'undefined' || clickedIndex === null) return;
       var slideToIndex;
 
       if (thumbsSwiper.params.loop) {
-        slideToIndex = parseInt($(thumbsSwiper.clickedSlide).attr('data-swiper-slide-index'), 10);
+        slideToIndex = parseInt($$1(thumbsSwiper.clickedSlide).attr('data-swiper-slide-index'), 10);
       } else {
         slideToIndex = clickedIndex;
       }
@@ -6708,6 +6708,9 @@
       input.classList.remove('form__placeholder-container_active');
     }
   });
+  $(function () {
+    $("#phone").mask("+7 (999) 999-9999");
+  });
 
   let magazineTopSlider, magazineEquipmentSlider, tabMagazineEquipmentSlider;
   magazineTopSlider = document.querySelector('.top-sale__content-js');
@@ -6824,5 +6827,37 @@
     textContainer.classList.toggle('detail__info-content-text_open');
     moreBtn.textContent === 'Свернуть' ? moreBtn.textContent = 'Развернуть полностью' : moreBtn.textContent = 'Свернуть';
   });
+
+  Swiper$1.use([Pagination$1, Autoplay$1, Navigation$1]);
+  const catalogSlider = '.catalog__banner-slider-js';
+  const clearBtn = document.querySelector('.catalog__filter-clear-btn-js');
+
+  if (document.querySelector(catalogSlider)) {
+    new Swiper$1(catalogSlider, {
+      speed: 1000,
+      slidesPerView: 1,
+      spaceBetween: 32,
+      pagination: {
+        el: ".slider__dots",
+        clickable: true
+      },
+      navigation: {
+        nextEl: `.catalog__banner-btn-left-js`,
+        prevEl: `.catalog__banner-btn-right-js`
+      },
+      autoplay: {
+        delay: 5000
+      }
+    });
+  }
+
+  clearBtn && clearBtn.addEventListener('click', () => {
+    const checkBoxContainer = document.querySelector('.catalog__filter-checkbox-container');
+    const inputs = checkBoxContainer.querySelectorAll('.catalog__filter-checkbox-input-js');
+    inputs.forEach(input => {
+      input.checked = false;
+    });
+  });
+  $(".js-range-slider").ionRangeSlider();
 
 }));
