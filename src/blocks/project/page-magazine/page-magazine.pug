@@ -1,0 +1,28 @@
+mixin page-magazine()
+  +banner-slider(data.magazinelider).magazine-slider-js.slider_bg-green
+  section.top-sale
+    .container 
+      ul.top-sale__list
+        li.top-sale__item
+          img(src='/img/content/dlink.png').top-sale__img
+        li.top-sale__item
+          img(src='/img/content/tvip.png').top-sale__img
+        li.top-sale__item
+          img(src='/img/content/ezip.png').top-sale__img
+        li.top-sale__item
+          img(src='/img/content/dahua.png').top-sale__img
+      .top-sale__title-container 
+        h2.top-sale__title Топ продаж
+        a(href="#").top-sale__link Смотреть все
+    .container.popular-tarif__container.overlay-js
+      div(class=`popular-tarif__content top-sale__content-js`)
+        .popular-tarif__wrapper.swiper-wrapper
+          each card in data.equipmentSlider
+            +card(card, 'equipment').swiper-slide
+      div(class=`popular-tarif__button-arrow popular-tarif__button-left top-sale__button-left-js`)
+      div(class=`popular-tarif__button-arrow popular-tarif__button-right top-sale__button-right-js`)
+    +two-banner(data.magazineBanner, '').top-sale__two-banner
+  section.magazine-equipment
+    +popular-tarif(data.equipmentSlider, [ 'Wi-Fi роутеры', 'Видеонаблюдение', 'ТВ-приставки'], 'magazine', 'Оборудование', 'magazine', 'equipment', [ 'Для дома', 'Для офиса' ], 'Перейти в каталог', '#').equipment__container
+    .container
+      +banner(data.magazine, false, true).banner_mt6.banner__mb8.magazine__banner-bg

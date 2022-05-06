@@ -1,0 +1,72 @@
+mixin page-footer()
+  footer.footer 
+    .container 
+      .footer__top 
+        nav.footer__nav-top
+          .footer__logo
+            svg(class=`footer__logo-img`)
+              use(xlink:href="img/symbols.svg#footer_logo")
+          ul.footer__home 
+            li.footer__nav-title Для дома
+            li 
+              a(href="#" target="_blank").footer__link.footer__link_gray Интернет
+            li 
+              a(href="#" target="_blank").footer__link.footer__link_gray Телевидение
+            li 
+              a(href="#" target="_blank").footer__link.footer__link_gray Телефония
+            li 
+              a(href="#" target="_blank").footer__link.footer__link_gray Видеонаблюдение
+            li 
+              a(href="#" target="_blank").footer__link.footer__link_gray Абонентам
+          ul.footer__connection 
+            li.footer__nav-title Подключениe 
+            li 
+              a(href='tel:+74954016161').footer__link +7 (495) 401-61-61
+            li
+              a(href='mailto:info@granline.net').footer__link info@granline.net
+          ul.footer__business
+            li.footer__nav-title Для бизнеса
+            li 
+              a(href="#" target="_blank").footer__link.footer__link_gray Услуги
+            li 
+              a(href="#" target="_blank").footer__link.footer__link_gray Выделенная линия
+            li 
+              a(href="#" target="_blank").footer__link.footer__link_gray Телефония
+            li 
+              a(href="#" target="_blank").footer__link.footer__link_gray Телевидение
+          ul.footer__tech
+            li.footer__nav-title Техническая поддержка
+            li 
+              a(href='tel:+74954016161').footer__link +7 (495) 401-61-61 доб. 2
+            li
+              a(href='mailto:info@granline.net').footer__link info@granline.net
+          ul.footer__other
+            li.footer__nav-title Другое
+            li 
+              a(href="#" target="_blank").footer__link.footer__link_gray Личный кабинет
+            li 
+              a(href="#" target="_blank").footer__link.footer__link_gray Оплата
+            li 
+              a(href="#" target="_blank").footer__link.footer__link_gray Поддержка
+            li 
+              a(href="#" target="_blank").footer__link.footer__link_gray Контакты
+          ul.footer__app
+            li.footer__nav-title Мобильное приложение
+            li
+              .footer__buttons 
+                a(href="#" target="_blank").footer__button.banner__button_google
+                a(href="#" target="_blank").footer__button.banner__button_apple
+          ul.footer__magazine
+            li.footer__nav-title Интернет-магазин
+            li 
+              a(href="#" target="_blank").footer__link.footer__link_gray Wi-Fi роутеры
+            li 
+              a(href="#" target="_blank").footer__link.footer__link_gray Видеонаблюдение
+            li 
+              a(href="#" target="_blank").footer__link.footer__link_gray ТВ-приставки
+            li 
+              a(href="#" target="_blank").footer__link.footer__link_gray Защита от протечек воды
+      .footer__bottom
+        a(href="#" target="_blank").footer__bottom_confidicial Политика конфиденциальности
+        a(href="#" target="_blank").footer__bottom_copyright © 2022. ООО «Гранлайн»
+        a(href="#" target="_blank").footer__bottom_vk

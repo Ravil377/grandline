@@ -1,0 +1,24 @@
+mixin two-banner(data, title)
+	.two-banner&attributes(attributes)
+		.container.two-banner__container
+			h2.two-banner__title!=title
+			.two-banner__banner-container
+				each banner in data
+					-
+						var title = banner.title || '';
+						var desc = banner.desc || '';
+						var button = banner.button || '';
+						var img = banner.img || '';
+						var btnId = banner.id || '';
+						var href = banner.href || '';
+					.two-banner__card 
+						.two-banner__content
+							.two-banner__card-title!=title
+							.two-banner__desc!=desc
+							if !(href)
+								div(data-id=btnId).two-banner__btn!=button
+							if href
+								a(href=href, target="_blank").two-banner__btn!=button
+						.two-banner__img-container
+							img(src=img alt=title).two-banner__img
+

@@ -1,0 +1,19 @@
+.btn {
+    width: 100%;
+    display: flex;
+    min-height: 48px;
+    border-radius: 5px;
+    background: var(--background-blue);
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 48px;
+    color: var(--text-white);
+    transition: $time;
+    border: none;
+    cursor: pointer;
+    &:hover {
+        opacity: var(--opacity);
+    }
+}

@@ -1,0 +1,27 @@
+mixin header-title(data, sliderTabClass)
+  -
+    var title = data.title || '';
+    var breadcrumbsHome = data.home || '';
+    var breadcrumbsPage = data.page || '';
+    var sliderTabClass = sliderTabClass || '';
+    var menu = data.menu || {};
+    var select = data.select || false;
+    var category = data.category || '';
+  .title__container 
+    .breadcrumbs__container
+      a(href="#").breadcrumbs__home!=breadcrumbsHome
+      if(category) 
+        a(href="#").breadcrumbs__home.breadcrumbs__home_category!=category
+      a(href="#").breadcrumbs__page!=breadcrumbsPage
+    if(title)
+      h1!=title 
+    if menu !== null
+      .title__tabs-container
+        div(class=`title__tabs ${sliderTabClass}__tabs-js`)
+          ul(class=`swiper-wrapper`)
+            each item, idx in menu
+              li(class=`tab__item ${idx === 0 ? 'title__tab_active' : ''}`).swiper-slide!=item
+        if select
+          +select().title__select
+
+    

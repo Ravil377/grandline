@@ -1,0 +1,29 @@
+mixin page-contacts()
+    section.contacts 
+        .container
+            +header-title(data.contactsPageTitle)
+    .contacts__content-container 
+        .container
+            .contacts__content
+                ul.contacts__lists.contacts_address 
+                    li.contacts__title Адрес офиса:
+                    li.contacts__desc.contacts__adress Московская обл., г.Балашиха, ул.Дмитриева, д.12, оф.523
+                ul.contacts__lists.contacts_contacts
+                    li.contacts__title Контактный центр:
+                    li.contacts__desc.contacts__tel
+                        a(href="tel: +74954016161") +7 (495) 401-61-61
+                    li.contacts__desc.contacts__email
+                        a(href="mailto: info@granline.net") info@granline.net
+                ul.contacts__lists.contacts_tech
+                    li.contacts__title Техническая поддержка:
+                    li.contacts__desc.contacts__tel
+                        a(href="tel: +74954016161") +7 (495) 401-61-61 доб.2 <span>(круглосуточно)</span>
+                    li.contacts__desc.contacts__email
+                        a(href="mailto: info@granline.net") info@granline.net
+                ul.contacts__lists.contacts_timework
+                    li.contacts__title Режим работы офиса:
+                    li.contacts__desc <span class='contacts__desc_bg'>Пн-Пт</span> 9:00 - 18:00
+                    li.contacts__desc <span class='contacts__desc_bg'>Сб</span> 9:00 - 17:00
+                    li.contacts__desc <span class='contacts__desc_bg'>Обед</span> 13:00 - 14:00
+                div(id='map').contacts__map 
+                    script(src='https://api-maps.yandex.ru/2.1/?apikey=5d4e9d50-faf0-45d0-9fa2-5385313a0f49&lang=ru_RU')

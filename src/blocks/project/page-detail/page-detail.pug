@@ -1,0 +1,82 @@
+mixin page-detail()
+	section.detail 
+		.container  
+			+header-title(data.detailPageTitle)
+			.detail__content 
+				.detail__image 
+					.detail__big-slider.detail__big-slider-js
+						.swiper-wrapper
+							img(src='/img/content/dlink1-big.png' alt='Dlink').detail__big-img.swiper-slide
+							img(src='/img/content/dlink1-big.png' alt='Dlink').detail__big-img.swiper-slide
+							img(src='/img/content/dlink1-big.png' alt='Dlink').detail__big-img.swiper-slide
+							img(src='/img/content/dlink1-big.png' alt='Dlink').detail__big-img.swiper-slide
+					.detail__small-slider.detail__small-slider-js
+						.swiper-wrapper
+							img(src='/img/content/dlink1.png' alt='Dlink').detail__sm-img.swiper-slide
+							img(src='/img/content/dlink2.png' alt='Dlink').detail__sm-img.swiper-slide
+							img(src='/img/content/dlink3.png' alt='Dlink').detail__sm-img.swiper-slide
+							img(src='/img/content/dlink4.png' alt='Dlink').detail__sm-img.swiper-slide
+				.detail__card
+					.detail__card-desc Wi-Fi роутеры
+					.detail__card-title D-Link DIR-806
+					.detail__card-level Начальный уровень
+					ul.detail__card-recommended-list
+						li.detail__card-recommended-item
+							a(href="#").detail__card-recommended-link Базовый 70
+						li.detail__card-recommended-item
+							a(href="#").detail__card-recommended-link Базовый PRO 100
+					ul.detail__card-characteristics-list
+						li.detail__card-characteristics-item 
+							p.detail__card-characteristics-title Частотный диапазон
+							.detail__card-characteristics-border 
+							p.detail__card-characteristics-desc 2.4 / 5 ГГц
+						li.detail__card-characteristics-item 
+							p.detail__card-characteristics-title Скорость Wi-Fi
+							.detail__card-characteristics-border 
+							p.detail__card-characteristics-desc 867 Мбит/с
+						li.detail__card-characteristics-item 
+							p.detail__card-characteristics-title Кол-во устройств
+							.detail__card-characteristics-border 
+							p.detail__card-characteristics-desc 10
+						li.detail__card-characteristics-item 
+							p.detail__card-characteristics-title Порты
+							.detail__card-characteristics-border 
+							p.detail__card-characteristics-desc 4 порта LAN 10/100BASE-TX
+						li.detail__card-characteristics-item 
+							p.detail__card-characteristics-title Гарантия
+							.detail__card-characteristics-border 
+							p.detail__card-characteristics-desc 2 года
+					.detail__card-bonus Бесплатная доставка и настройка для новых абонентов
+					.detail__card-bottom 
+						.detail__card-price 2850 <span>₽</span>
+						button(data-id="connection").detail__card-btn Заказать
+	.detail__info-container 
+		.container 
+			nav.detail__info
+				ul.detail__info-list.detail__info-list-js
+					li(id='description').detail__info-item.detail__info-item_active Описание
+					li(id='specifications').detail__info-item Характеристики
+				.detail__info-content 
+					.detail__info-content-text-container
+						div(data-content='description').detail__info-content-text.detail__info-content-text_active
+							h2 Описание D-Link DIR-806
+							p Используя беспроводной маршрутизатор DIR-806A, Вы сможете быстро организовать высокоскоростную беспроводную сеть дома и в офисе, предоставив доступ к сети Интернет компьютерам и мобильным устройствам практически в любой точке (в зоне действия беспроводной сети). 
+							p Одновременная работа в диапазонах 2,4 ГГц и 5 ГГц позволяет использовать беспроводную сеть для широкого круга задач. 
+							p Маршрутизатор может выполнять функции базовой станции для подключения к беспроводной сети устройств, работающих по стандартам 802.11a, 802.11b, 802.11g, 802.11n и 802.11ac (со скоростью беспроводного соединения до 733 Мбит/с1).
+							p тексттексттексттексттексттексттексттексттексттексттексттексттекст
+						div(data-content='specifications').detail__info-content-text
+							p Равным образом повышение уровня гражданского сознания обеспечивает актуальность экономической целесообразности принимаемых изменений. Разнообразный и богатый опыт рамки и место обучения кадров обеспечивает широкому кругу специалистов прогресса профессионального общества. Равным образом постоянный количественный рост и сфера нашей активности обеспечивает актуальность дальнейших направлений развития.
+						.detail__info-content-text-more.detail__info-content-text-more-js Развернуть полностью
+					.detail__info-content-company-container
+						.detail__info-content-company 
+							img(src='img/content/dlink-logo.png').detail__info-content-company-img
+							//- svg(class=`detail__info-content-company-img`)
+							//- 	use(xlink:href="img/symbols.svg#dlink-logo")
+						.detail__info-content-company-art Артикул: 1100 0273 2598 2
+	section.detail__recommended 
+		.container
+			h2.detail__recommended-title Вам может подойти
+			.container
+				.detail__recommended-list
+					each card in data.detailsRecommended
+						+card(card, 'equipment').swiper-slide

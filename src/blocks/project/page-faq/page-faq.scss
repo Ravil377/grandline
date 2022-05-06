@@ -1,0 +1,113 @@
+.faq {
+    padding-top: 47px;
+    padding-bottom: 53px;
+}
+
+.faq__content {
+    background: #F4F6FB;
+    padding-top: 25px;
+    padding-bottom: 111px;
+}
+
+.faq__lists {
+    @include ul-none();
+}
+
+.faq__item {
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 25px;
+    background: var(--background-white);
+    box-shadow: var(--shadow);
+    padding-left: 22px;
+    padding-right: 22px;
+    padding-top: 33.5px;
+    padding-bottom: 29.5px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.faq__question {
+    position: relative;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 27px;
+    color: var(--text);
+    border-radius: var(--radius);
+    padding-right: 50px;
+}
+
+.faq__answer {
+    overflow: hidden;
+    max-width: 90%;
+    max-height: 0;
+    padding: 0 10px;
+    opacity: 0;
+    transition: all var(--time) ease-out;
+    p {
+        &:first-child {
+            margin-top: 21.5px;
+        }
+    }
+    p, li {
+        margin: 0;
+        font-weight: 400;
+        line-height: 24px;
+        color: var(--text);
+    }
+    img {
+        filter: drop-shadow(0px 10px 34px rgba(177, 197, 209, 0.47));
+        max-width: 792px;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        margin-left: -32px;
+    }
+    ul {
+        @include ul-none();
+        margin-top: 17px;
+        list-style-type: decimal;
+        li {
+            margin-left: 20px;
+        }
+    }
+}
+
+.faq__item-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: var(--background-blue);
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: var(--time);
+    cursor: pointer;
+    
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: block;
+      background-repeat: no-repeat;
+      background-image: url("data:image/svg+xml,%3Csvg width='18' height='11' viewBox='0 0 18 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.9088 -4.77e-08L18 1.18594L9 11L-5.1839e-08 1.18594L1.08562 -7.39351e-07L9 8.6224L16.9088 -4.77e-08Z' fill='white'/%3E%3C/svg%3E%0A");
+      background-position: center;
+    }
+
+}
+
+  .faq__item_open .faq__item-btn {
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  .faq__item_open .faq__question {
+    color: var(--text-blue);
+  }
+
+  .faq__item_open .faq__answer {
+    max-height: 5000px;
+    opacity: 1;
+  }

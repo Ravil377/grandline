@@ -1,0 +1,15 @@
+mixin news(news)
+  section.news-mini&attributes(attributes)
+    .container.news-mini__container
+      .news-mini__title-container
+        h2.news-mini__title Новости
+        a(href="#" target="_blank") Смотреть все
+      ul
+        each item in news
+          -
+            var title = item.title || '';
+            var date = item.data || '';
+          li
+            a(href='#' target='_blank')
+              .item__news-title!=title
+              .item__news-date!=date

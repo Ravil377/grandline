@@ -1,0 +1,28 @@
+mixin popular-tarif(cards, menu, sliderClass, titul, sliderTabClass, tarif, menuitems, link, href)
+	-
+		//- var menu2 = menu2 || false;
+		var menuitems = menuitems || '';
+		var link = link || '';
+		var href = href || '#';
+	section.popular-tarif&attributes(attributes)
+		.container
+			.popular-tarif__title-container
+				h2.popular-tarif__title!=titul
+				if link
+					a(href=href)!=link 
+			div(class=`${sliderClass}__tabs-js`).popular-tarif__tabs
+				ul(class=`swiper-wrapper`)
+					each item, idx in menu
+						li(class=`${idx === 0 ? 'popular-tarif__tab_active' : ''}`).swiper-slide!=item
+			if menuitems
+				div(class=`popular-tarif__tabs ${sliderTabClass}__tabs2-js popular-tarif__tabs2`)
+					ul
+						each item, idx in menuitems
+							li(class=`tab2__item-js ${idx === 0 ? 'menu2__tab_active' : ''}`)!=item
+		.container.popular-tarif__container.overlay-js
+			div(class=`popular-tarif__content ${sliderClass}__content-js`)
+				.popular-tarif__wrapper.swiper-wrapper
+					each card in cards
+						+card(card, tarif).swiper-slide
+			div(class=`popular-tarif__button-arrow popular-tarif__button-left ${sliderClass}__button-left-js`)
+			div(class=`popular-tarif__button-arrow popular-tarif__button-right ${sliderClass}__button-right-js`)

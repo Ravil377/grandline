@@ -1,0 +1,42 @@
+// a, svg {
+//     transition: $time;
+//   }
+
+//   a:not([class]) {
+//     color: $theme;
+//     text-decoration: none;
+
+//     &:hover {
+//       text-decoration: underline;
+//     }
+//   }
+
+  // .content {
+  //   max-width: 1217px;
+  //   margin: 0 auto;
+  // }
+
+  // .page {
+  //   padding-top: 29px;
+
+  //   @media (min-width: $screen-lg) {
+  //     padding-top: 65px;
+  //   }
+  // }
+  // .main {
+  //   margin: 0 auto;
+  //   max-width: 1440px;
+  //   overflow-x: hidden;
+  // }
+
+  .container {
+    margin: 0 auto;
+    max-width: 1320px;
+    width: 100%;
+    height: 100%;
+    padding: 0 20px;
+  }
+
+  .body_fixed {
+    overflow: hidden;
+  }

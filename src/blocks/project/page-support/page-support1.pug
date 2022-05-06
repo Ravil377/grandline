@@ -1,0 +1,41 @@
+mixin page-support1()
+  section.support 
+    .container
+      +header-title(data.internetPageTitle)
+      .support__container 
+        .support__form-container.application
+          p.support__form-title Заявка на подключение услуг
+          p.support__form-desc Выберите услуги, которые хотели бы подключить
+          form(action="#" method="post").support__form.support__form-js
+            .support__form-checkbox-container
+              label.catalog__filter-checkbox
+                input(type='checkbox' value='1').catalog__filter-checkbox-input-js
+                span Интернет
+              label.catalog__filter-checkbox
+                input(type='checkbox' value='2').catalog__filter-checkbox-input-js
+                span Цифровое ТВ
+              label.catalog__filter-checkbox
+                input(type='checkbox' value='3').catalog__filter-checkbox-input-js
+                span Домашний телефон
+            .form__placeholder-container.support__placeholder-container
+              input(type="text" placeholder=" " required)
+              label Как вас зовут?*
+              span.input__error Это обязательно поле
+            .form__placeholder-container.support__placeholder-container
+              input(type="text" placeholder=" " required)
+              label Адрес подключения*
+              span.input__error Это обязательно поле
+            .form__placeholder-container.support__placeholder-container
+              input(type="text" placeholder=" " required id='phone')
+              label Ваш телефон*
+              span.input__error Это обязательно поле
+            .form__placeholder-container.support__placeholder-container
+              input(type="email" placeholder=" " required)
+              label Электронная почта*
+              span.input__error Это обязательно поле
+            .form__checkbox-container
+              img(src='/img/content/recaptcha.png')
+            +btn('Отправить заявку', 'support', 'submit').form_btn.form_btn-js
+          p.support__agreement Отправляя заявку на подключение услуг, я соглашаюсь на обработку своих персональных данных, указанных в заявке с целью информирования по услугам ООО "ГранЛайн" и заключения договора.
+        .support__banner-container
+          +banner(data.faqBanner).support__banner
