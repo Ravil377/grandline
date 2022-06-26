@@ -77,3 +77,89 @@ mixin page-detail()
 				.detail__recommended-list
 					each card in data.detailsRecommended
 						+card(card, 'equipment').swiper-slide
+
+
+mixin page-detail1()
+	section.detail 
+		.container  
+			+header-title(data.detailPageTitle)
+			.detail__content 
+				.detail__image 
+					.detail__big-slider.detail__big-slider-js
+						.swiper-wrapper
+							img(src='/img/content/3289.png' alt='Ajax').detail__big-img.swiper-slide
+							img(src='/img/content/3289.png' alt='Ajax').detail__big-img.swiper-slide
+					.detail__small-slider.detail__small-slider-js
+						.swiper-wrapper
+							img(src='/img/content/3290-mini.png' alt='Ajax').detail__sm-img.swiper-slide
+							img(src='/img/content/11610_mini.png' alt='Ajax').detail__sm-img.swiper-slide
+				.detail__card
+					.detail__card-desc Центры управления
+					.detail__card-title Hub 2 Plus
+					.card__equipment-color-container 
+						.card__equipment-color.card__equipment-color_black
+						.card__equipment-color.card__equipment-color_white
+					.detail__card-icon-container
+						ul 
+							li 
+								svg
+									use(xlink:href="img/symbols.svg#ethernet")
+								| Ethernet
+							li 
+								svg
+									use(xlink:href="img/symbols.svg#gsm")
+								| LTE/3G/2G
+							li 
+								svg
+									use(xlink:href="img/symbols.svg#wifi")
+								| Wi-Fi
+							li 
+								svg
+									use(xlink:href="img/symbols.svg#photo")
+								| Фото по тревоге
+							li 
+								svg
+									use(xlink:href="img/symbols.svg#video")
+								| Видеонаблюдение
+					.detail__card-info
+						| Hub 2 Plus возводит связь в абсолют. Он оснащен 4 каналами связи и работает в скоростных сетях LTE. Такая конфигурация позволяет подключить устройство к двум различным интернет-провайдерам через Ethernet и Wi-Fi, а также к двум сотовым сетям. При этом автоматическое переключение между каналами занимает секунды.
+					.detail__card-bottom 
+						.detail__card-price 23 050 <span>₽</span>
+
+						button(data-id="connection").detail__card-btn Заказать
+	.detail__info-container 
+		.container 
+			nav.detail__info
+				ul.detail__info-list.detail__info-list-js
+					li(id='description').detail__info-item.detail__info-item_active Описание
+					li(id='specifications').detail__info-item Характеристики
+					li(id='dostavka').detail__info-item Доставка
+					li(id='vozvrat').detail__info-item Возврат
+					li(id='oplata').detail__info-item Оплата
+				.detail__info-content 
+					.detail__info-content-text-container
+						div(data-content='description').detail__info-content-text.detail__info-content-text_active
+							h2 Описание Hub 2 Plus
+							p Центр управления системой Ajax с встроенным GSM-коммуникатором (2G), 2 SIM карты, Ethernet; протоколы Contact ID, SIA; до 100 радиоканальных устройств работающих по протоколу Jeweller; f-раб.868,7...869,2 МГц; дальность связи до 2000 м; поддержка датчиков MotionCam; до 25 видеокамер; до 50 пользователей; U-пит.110…240 В; встроенный Li-Ion 2 Ач резервный источник питания; t-раб.-10...+40°С; 163x163x36 мм. Черного цвета
+						div(data-content='specifications').detail__info-content-text
+							p Равным образом повышение уровня гражданского сознания обеспечивает актуальность экономической целесообразности принимаемых изменений. Разнообразный и богатый опыт рамки и место обучения кадров обеспечивает широкому кругу специалистов прогресса профессионального общества. Равным образом постоянный количественный рост и сфера нашей активности обеспечивает актуальность дальнейших направлений развития.
+						div(data-content='dostavka').detail__info-content-text
+							h2 Доставка
+						div(data-content='vozvrat').detail__info-content-text
+							h2 Возврат
+						div(data-content='oplata').detail__info-content-text
+							h2 Оплата
+						.detail__info-content-text-more.detail__info-content-text-more-js Развернуть полностью
+					.detail__info-content-company-container
+						.detail__info-content-company 
+							img(src='img/content/ajax-logo.png').detail__info-content-company-img
+							//- svg(class=`detail__info-content-company-img`)
+							//- 	use(xlink:href="img/symbols.svg#dlink-logo")
+						.detail__info-content-company-art Артикул: 1100 0273 2598 2
+	section.detail__recommended 
+		.container
+			h2.detail__recommended-title С этим товаром смотрят
+			.container
+				.detail__recommended-list
+					each card in data.detailsAjax
+						+card(card, 'ajax').swiper-slide

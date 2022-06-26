@@ -37,6 +37,13 @@ mixin card(card, tarif)
 			img(src=img alt=title).card__equipment-img
 			p.card__equipment-type!=type
 			p.card__equipment-title!=title
+		if (tarif === 'ajax')
+			img(src=img alt=title style='height: auto; width: 100%; object-fit: cover; margin-bottom: 17px; margin:0 auto;').card__equipment-img
+			p(style="margin-top: 0;").card__equipment-type!=type
+			p.card__equipment-title!=title
+			.card__equipment-color-container 
+				.card__equipment-color.card__equipment-color_black
+				.card__equipment-color.card__equipment-color_white
 		if (pack)
 			.card__pack!=pack
 		if (recommended)
@@ -51,4 +58,4 @@ mixin card(card, tarif)
 			.card__detail Кол-во устройств
 				span!=count
 		.card__price!=price
-		a(href=href target="_blank" data-id=id).card__button!=button
+		a(href=href data-id=id).card__button!=button

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="date=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="format-detection" content="email=no">
+    <meta content="notranslate" name="google">
+    <meta property="og:image" content="img/sharing/logo.png">
+    <meta property="vk:image" content="img/sharing/logo.png">
+    <meta name="twitter:image:src" content="img/sharing/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css" />
+    <link rel="stylesheet" href="css/style.min.css">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#fffff">
+    <meta name="msapplication-navbutton-color" content="#000">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#000">
+    <title>Карточка оборудования</title>
+</head>
+
+<body class="body">
+    <header class="header">
+        <div class="header__top">
+            <div class="container header__container">
+                <div class="logo header__logo"><svg class="logo__img">
+                        <use xlink:href="img/symbols.svg#logo"></use>
+                    </svg></div>
+                <nav class="header__navigation">
+                    <ul>
+                        <li><a class="hvr-underline-from-center" href="#">Для дома</a></li>
+                        <li> <a class="hvr-underline-from-center" href="#">Для бизнеса</a></li>
+                        <li> <a class="hvr-underline-from-center" href="#">Интернет-магазин</a></li>
+                        <li class="dropdown"> <a class="dropdown__icon dropdown__icon-js" href="#">Еще</a>
+                            <div class="dropdown__menu-container">
+                                <ul class="dropdown__menu">
+                                    <li> <a href="#">Новости</a></li>
+                                    <li> <a href="#">Контакты</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </nav><a class="header__phone" href="tel:+74954016161">
+                    <p>+7 (495) 401-61-61</p>
+                </a>
+                <div class="burger burger-js"><span></span></div>
+                <div class="burger__menu burger__menu-js">
+                    <nav class="header__navigation header__navigation_mobil header__navigation_mobil-js">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide"><a class="hvr-underline-from-center" href="#">Для дома</a></li>
+                            <li class="swiper-slide"><a class="hvr-underline-from-center" href="#">Для бизнеса</a></li>
+                            <li class="swiper-slide"><a class="hvr-underline-from-center" href="#">Интернет-магазин</a></li>
+                            <li class="dropdown swiper-slide"> <a class="dropdown__icon dropdown__icon-js" href="#">Еще</a>
+                                <div class="dropdown__menu-container">
+                                    <ul class="dropdown__menu">
+                                        <li> <a href="#">Новости</a></li>
+                                        <li> <a href="#">Контакты</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                    <nav class="header__bottom-navigation header__bottom-navigatiom_mobil">
+                        <ul>
+                            <li class="lk"><a class="lk__link" href="#">Личный кабинет </a></li>
+                            <li> <a href="#">Интернет</a></li>
+                            <li> <a href="#">Телевидение</a></li>
+                            <li> <a href="#">Смотрёшка ТВ</a></li>
+                            <li class="dropdown"> <a class="dropdown__icon dropdown__icon-js" href="#">Дополнительные услуги</a>
+                                <div class="dropdown__menu-container">
+                                    <ul class="dropdown__menu" style="padding-top: 0;">
+                                        <li> <a href="#">Видеонаблюдение</a></li>
+                                        <li> <a href="#">Охранная сигнализация</a></li>
+                                        <li> <a href="#">Построение сети Wi-FIi и ЛВС</a></li>
+                                        <li> <a href="#">Монтаж СКС</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="header__buttons header__buttons_mobil"><a href="#">Оплата</a><a href="#">Поддержка</a></div>
+                </div>
+                <div class="header__buttons"> <a href="#">Оплата</a><a href="#">Поддержка</a></div>
+            </div>
+        </div>
+        <div class="header__bottom">
+            <div class="container">
+                <nav class="header__bottom-navigation">
+                    <ul>
+                        <li> <a href="#">Интернет</a></li>
+                        <li> <a href="#">Телевидение</a></li>
+                        <li> <a href="#">Смотрёшка ТВ</a></li>
+                        <li class="dropdown"> <a class="dropdown__icon dropdown__icon-js" href="#">Дополнительные услуги</a>
+                            <div class="dropdown__menu-container">
+                                <ul class="dropdown__menu" style="padding-top: 0;">
+                                    <li> <a href="#">Видеонаблюдение</a></li>
+                                    <li> <a href="#">Охранная сигнализация</a></li>
+                                    <li> <a href="#">Построение сети Wi-FIi и ЛВС</a></li>
+                                    <li> <a href="#">Монтаж СКС</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="lk"><a class="lk__link" href="#">Личный кабинет</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <section class="catalog">
+        <div class="container">
+            <div class="title__container">
+                <div class="breadcrumbs__container"><a class="breadcrumbs__home" href="#">Интернет-магазин</a><a class="breadcrumbs__page" href="#">Системы Ajax</a></div>
+                <h1>Системы Ajax</h1>
+                <div class="title__tabs-container">
+                    <div class="title__tabs __tabs-js">
+                        <ul class="swiper-wrapper"></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="catalog__banner-container catalog__banner-slider-js">
+                <div class="catalog__banner-list swiper-wrapper"> <img class="catalog__banner-img catalog__banner-item swiper-slide" src="img/content/banner1.jpg" /><img class="catalog__banner-img catalog__banner-item swiper-slide" src="img/content/banner2.jpg" /></div>
+                <div class="catalog__banner-btn catalog__banner-btn-left catalog__banner-btn-left-js"></div>
+                <div class="catalog__banner-btn catalog__banner-btn-right catalog__banner-btn-right-js"></div>
+                <div class="slider__dots"></div>
+            </div>
+            <div class="catalog__container">
+                <div class="catalog__ajax">
+                    <ul>
+                        <li class="active" title="Системы Ajax"><svg>
+                                <use xlink:href="img/symbols.svg#ajax-icon"></use>
+                            </svg>
+                            <p>Системы Ajax</p>
+                        </li>
+                        <li title="Стартовые комплекты"><svg>
+                                <use xlink:href="img/symbols.svg#start-icon"></use>
+                            </svg>
+                            <p>Стартовые комплекты</p>
+                        </li>
+                        <li title="Центры управления"><svg>
+                                <use xlink:href="img/symbols.svg#centr-icon"></use>
+                            </svg>
+                            <p>Центры управления</p>
+                        </li>
+                        <li title="Охрана помещений"><svg>
+                                <use xlink:href="img/symbols.svg#home-icon"></use>
+                            </svg>
+                            <p>Охрана помещений</p>
+                        </li>
+                        <li title="Охрана улицы"><svg>
+                                <use xlink:href="img/symbols.svg#street-icon"></use>
+                            </svg>
+                            <p>Охрана улицы</p>
+                        </li>
+                        <li title="Защита то пожара"><svg>
+                                <use xlink:href="img/symbols.svg#fire-icon"></use>
+                            </svg>
+                            <p>Защита то пожара</p>
+                        </li>
+                        <li title="Защита от потопа"><svg>
+                                <use xlink:href="img/symbols.svg#water-icon"></use>
+                            </svg>
+                            <p>Защита от потопа</p>
+                        </li>
+                        <li title="Тревожные кнопки"> <svg>
+                                <use xlink:href="img/symbols.svg#alarm-icon"></use>
+                            </svg>
+                            <p>Тревожные кнопки</p>
+                        </li>
+                        <li title="Управление"> <svg>
+                                <use xlink:href="img/symbols.svg#setting-icon"></use>
+                            </svg>
+                            <p>Управление</p>
+                        </li>
+                        <li title="Сирены"> <svg>
+                                <use xlink:href="img/symbols.svg#alarm-sound-icon"></use>
+                            </svg>
+                            <p>Сирены</p>
+                        </li>
+                        <li title="Автоматизация"> <svg>
+                                <use xlink:href="img/symbols.svg#automation-icon"></use>
+                            </svg>
+                            <p>Автоматизация</p>
+                        </li>
+                        <li title="Модули интеграции"> <svg>
+                                <use xlink:href="img/symbols.svg#module-icon"></use>
+                            </svg>
+                            <p>Модули интеграции</p>
+                        </li>
+                        <li title="Блоки питания"> <svg>
+                                <use xlink:href="img/symbols.svg#block-icon"></use>
+                            </svg>
+                            <p>Блоки питания</p>
+                        </li>
+                    </ul>
+                    <div class="catalog__content" data-id="1"><img src="./img/content/img_ajax.jpg" alt="ajax" />
+                        <div class="catalog__content-title">Ajax – профессиональная система безопасности для вашей квартиры, дома и офиса.</div>
+                        <ul>
+                            <li class="catalog__content-banner">
+                                <div class="c-title">Контроль доступа в помещение</div>
+                                <ul>
+                                    <li>Датчики окрытия дверей и окон</li>
+                                    <li>Датчики движения с фотофиксацией</li>
+                                </ul><a href="#">Подробнее</a><img src="./img/content/door_control.png" alt="Контроль доступа" />
+                            </li>
+                            <li class="catalog__content-banner">
+                                <div class="c-title">Предупреждение о затоплении и протечке</div>
+                                <ul>
+                                    <li>Датчик информирования о протечке</li>
+                                    <li>Функция отключения воды при протечке</li>
+                                </ul><a href="#">Подробнее</a><img src="./img/content/leaks.png" alt="Предупреждение о затоплении и протечке" />
+                            </li>
+                            <li class="catalog__content-banner">
+                                <div class="c-title">Оповещение о возгорании и задымлении</div>
+                                <ul>
+                                    <li>Детектор дыма</li>
+                                    <li>Предупреждение о резком росте температуры</li>
+                                    <li>Детектор угарного газа</li>
+                                </ul><a href="#">Подробнее</a><img src="./img/content/fire.png" alt="Оповещение о возгорании и задымлении" />
+                            </li>
+                            <li class="catalog__content-banner">
+                                <div class="c-title">Функция умный дом</div>
+                                <ul>
+                                    <li>Управление устройствами через приложение</li>
+                                    <li>Управление подачей воды</li>
+                                    <li>Сценарий управления устройствами</li>
+                                </ul><a href="#">Подробнее</a><img src="./img/content/app.png" alt="Функция умный дом" />
+                            </li>
+                        </ul>
+                        <ul class="_big-banner">
+                            <li class="catalog__content-banner">
+                                <div class="c-title">Интеграция видеонаблюдения</div>
+                                <p>Подключение и управление системой видеонаблюдения</p><a href="#">Подробнее</a><img src="./img/content/1_ajax.png" alt="Интеграция видеонаблюдения" />
+                            </li>
+                        </ul>
+                        <div class="catalog__content-video">
+                            <p>Посмотрите видео про систему охраны и управления AJAX.</p><img src="./img/content/2134.jpg" alt="видео" />
+                        </div>
+                    </div>
+                    <div class="catalog__content active" data-id="2">
+                        <div class="catalog__content-title">Центры управления</div><img src="./img/content/hub.png" alt="ajax" />
+                        <div class="catalog__content-desc">Хаб — централь системы безопасности. Он контролирует работу всех устройств системы, ставит и снимает помещение с охраны, а в случае угрозы оповещает охранную компанию и пользователей системы.</div>
+                        <div class="catalog__lists">
+                            <div class="card   "><img class="card__equipment-img" src="img/content/ajax1.png" alt="Hub 2 Plus" style="height: auto; width: 100%; object-fit: cover; margin-bottom: 17px; margin:0 auto;" />
+                                <p class="card__equipment-type" style="margin-top: 0;">Центры управления</p>
+                                <p class="card__equipment-title">Hub 2 Plus</p>
+                                <div class="card__equipment-color-container">
+                                    <div class="card__equipment-color card__equipment-color_black"></div>
+                                    <div class="card__equipment-color card__equipment-color_white"></div>
+                                </div>
+                                <div class="card__price">23 050 <span>₽</span></div><a class="card__button" href="#" data-id="connection">Заказать</a>
+                            </div>
+                            <div class="card   "><img class="card__equipment-img" src="img/content/ajax2.png" alt="Hub 2" style="height: auto; width: 100%; object-fit: cover; margin-bottom: 17px; margin:0 auto;" />
+                                <p class="card__equipment-type" style="margin-top: 0;">Центры управления</p>
+                                <p class="card__equipment-title">Hub 2</p>
+                                <div class="card__equipment-color-container">
+                                    <div class="card__equipment-color card__equipment-color_black"></div>
+                                    <div class="card__equipment-color card__equipment-color_white"></div>
+                                </div>
+                                <div class="card__price">13 750 <span>₽</span></div><a class="card__button" href="#" data-id="connection">Заказать</a>
+                            </div>
+                            <div class="card   "><img class="card__equipment-img" src="img/content/ajax1.png" alt="Hub Plus" style="height: auto; width: 100%; object-fit: cover; margin-bottom: 17px; margin:0 auto;" />
+                                <p class="card__equipment-type" style="margin-top: 0;">Центры управления</p>
+                                <p class="card__equipment-title">Hub Plus</p>
+                                <div class="card__equipment-color-container">
+                                    <div class="card__equipment-color card__equipment-color_black"></div>
+                                    <div class="card__equipment-color card__equipment-color_white"></div>
+                                </div>
+                                <div class="card__price">17 890 <span>₽</span></div><a class="card__button" href="#" data-id="connection">Заказать</a>
+                            </div>
+                            <div class="card   "><img class="card__equipment-img" src="img/content/ajax2.png" alt="Hub" style="height: auto; width: 100%; object-fit: cover; margin-bottom: 17px; margin:0 auto;" />
+                                <p class="card__equipment-type" style="margin-top: 0;">Центры управления</p>
+                                <p class="card__equipment-title">Hub</p>
+                                <div class="card__equipment-color-container">
+                                    <div class="card__equipment-color card__equipment-color_black"></div>
+                                    <div class="card__equipment-color card__equipment-color_white"></div>
+                                </div>
+                                <div class="card__price">9 550 <span>₽</span></div><a class="card__button" href="#" data-id="connection">Заказать</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="modal modal-js">
+        <div class="modal__container modal__container-js">
+            <div class="modal__close modal__close-js"></div>
+            <div class="modal__content-js">
+                <div class="modal__title">Оставить заявку</div>
+                <div class="modal__form-container">
+                    <form class="modal__form modal__form-js" action="#" method="post">
+                        <div class="form__placeholder-container"><input type="email" placeholder=" " required="required" /><label>Как вас зовут?*</label></div>
+                        <div class="form__placeholder-container"><input type="tel" placeholder=" " required="required" /><label>Ваш телефон*</label></div><button class="btn form_btn form_btn-js" data-id="send" type="submit">Отправить</button>
+                    </form>
+                </div>
+                <p>Отправляя заявку на подключение услуг, я соглашаюсь на обработку своих персональных данных, указанных в заявке с целью информирования по услугам ООО "ГранЛайн" и заключения договора.</p>
+            </div>
+            <div class="modal__content-success modal__content-success-js"><img src="img/content/success.png" />
+                <div class="modal__title">Ваша заявка успешно отправлена!</div>
+                <div class="modal__desc">Спасибо за Вашу заявку, <span>мы свяжемся с Вами в ближайшее время</span></div><button class="btn form_btn form_return-btn-js" data-id="return" type="button">Вернуться на сайт</button>
+            </div>
+            <div class="modal__content-error modal__content-error-js"><img src="img/content/error.png" />
+                <div class="modal__title">Извините, при отправке произошла ошибка!</div>
+                <div class="modal__desc">Пожалуйста, попробуйте заполнить форму еще раз</div><button class="btn form_btn form_return-btn-js" data-id="return" type="button">Вернуться на сайт</button>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__top">
+                <nav class="footer__nav-top">
+                    <div class="footer__logo"><svg class="footer__logo-img">
+                            <use xlink:href="img/symbols.svg#footer_logo"></use>
+                        </svg></div>
+                    <ul class="footer__home">
+                        <li class="footer__nav-title">Для дома</li>
+                        <li> <a class="footer__link footer__link_gray" href="#">Интернет</a></li>
+                        <li> <a class="footer__link footer__link_gray" href="#">Телевидение</a></li>
+                        <li> <a class="footer__link footer__link_gray" href="#">Телефония</a></li>
+                        <li> <a class="footer__link footer__link_gray" href="#">Видеонаблюдение</a></li>
+                        <li> <a class="footer__link footer__link_gray" href="#">Абонентам</a></li>
+                    </ul>
+                    <ul class="footer__connection">
+                        <li class="footer__nav-title">Подключениe </li>
+                        <li> <a class="footer__link" href="tel:+74954016161">+7 (495) 401-61-61</a></li>
+                        <li><a class="footer__link" href="mailto:info@granline.net">info@granline.net</a></li>
+                    </ul>
+                    <ul class="footer__business">
+                        <li class="footer__nav-title">Для бизнеса</li>
+                        <li> <a class="footer__link footer__link_gray" href="#">Услуги</a></li>
+                        <li> <a class="footer__link footer__link_gray" href="#">Выделенная линия</a></li>
+                        <li> <a class="footer__link footer__link_gray" href="#">Телефония</a></li>
+                        <li> <a class="footer__link footer__link_gray" href="#">Телевидение</a></li>
+                    </ul>
+                    <ul class="footer__tech">
+                        <li class="footer__nav-title">Техническая поддержка</li>
+                        <li> <a class="footer__link" href="tel:+74954016161">+7 (495) 401-61-61 доб. 2</a></li>
+                        <li><a class="footer__link" href="mailto:info@granline.net">info@granline.net</a></li>
+                    </ul>
+                    <ul class="footer__other">
+                        <li class="footer__nav-title">Другое</li>
+                        <li> <a class="footer__link footer__link_gray" href="#">Личный кабинет</a></li>
+                        <li> <a class="footer__link footer__link_gray" href="#">Оплата</a></li>
+                        <li> <a class="footer__link footer__link_gray" href="#">Поддержка</a></li>
+                        <li> <a class="footer__link footer__link_gray" href="#">Контакты</a></li>
+                    </ul>
+                    <ul class="footer__app">
+                        <li class="footer__nav-title">Мобильное приложение</li>
+                        <li>
+                            <div class="footer__buttons"> <a class="footer__button banner__button_google" href="#"></a><a class="footer__button banner__button_apple" href="#"></a></div>
+                        </li>
+                    </ul>
+                    <ul class="footer__magazine">
+                        <li class="footer__nav-title">Интернет-магазин</li>
+                        <li> <a class="footer__link footer__link_gray" href="#">Wi-Fi роутеры</a></li>
+                        <li> <a class="footer__link footer__link_gray" href="#">Видеонаблюдение</a></li>
+                        <li> <a class="footer__link footer__link_gray" href="#">ТВ-приставки</a></li>
+                        <li> <a class="footer__link footer__link_gray" href="#">Защита от протечек воды</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer__bottom"><a class="footer__bottom_confidicial" href="#">Политика конфиденциальности</a><a class="footer__bottom_copyright" href="#">© 2022. ООО «Гранлайн»</a><a class="footer__bottom_vk" href="#"></a></div>
+        </div>
+    </footer><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script><script src="js/custom.js"></script>
+</body>
+
+</html>

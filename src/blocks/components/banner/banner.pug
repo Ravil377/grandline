@@ -15,9 +15,9 @@ mixin banner(data, app, gray)
       .banner__desc!=desc
       if app
         .banner__buttons
-          a(href="#" target="_blank").banner__button.banner__button_google
-          a(href="#" target="_blank").banner__button.banner__button_apple
+          a(href="#").banner__button.banner__button_google
+          a(href="#").banner__button.banner__button_apple
       if href
-        a(href="#" target="_blank").banner__button.banner__btn!= btnText
+        a(href="#").banner__button.banner__btn!= btnText
     div(class=`banner__right-side ${classHref}`)
       img(src=img alt=titul)

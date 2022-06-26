@@ -1,0 +1,38 @@
+extends pug/layout.pug
+
+block meta
+  title Видеонаблюдение
+block header
+
+block content
+    +page-header()
+    .slider.banner_blue-green
+        ul 
+            li.swiper-slide
+                .container.slider__container
+                    .slider__left-container
+                        h2 Видеонаблюдение <span>От 15 000 руб.</span>
+                        p Организация системы видеонаблюдения для различных объектов. Для магазинов, кафе, ресторанов, подъездов и паркингов. Облачное и локальное хранение записей с удаленным доступом.
+                        a(href="#" data-id="connection") Оставить заявку
+                    .slider__right-container
+                        img(src='./img/content/cctv.png' alt="Видеонаблюдение").modal__select-avatar.select-girl-img-js
+    .container
+        h1 Как подключить видеонаблюдение
+        .how-block
+            ul
+                li
+                    .how-block__num 1
+                    .how-block__text Оставьте <a href="#" data-id="connection">заявку</a> на сайте либо <a href="tel:84954016161">позвоните нам</a>
+                li
+                    .how-block__num 2
+                    .how-block__text Менеджер учтет ваши пожелания и подготовит лучшее предложение
+                li
+                    .how-block__num 3
+                    .how-block__text Заключим договор и согласуем дату монтажа
+                li
+                    .how-block__num 4
+                    .how-block__text Вы получите эффективный инструмент контроля безопасности
+    +page-footer()
+    +modal()
+block footer
+  //- +page-footer()

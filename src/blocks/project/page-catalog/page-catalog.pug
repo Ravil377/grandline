@@ -32,8 +32,116 @@ mixin page-catalog()
 				.catalog__content
 					.catalog__content-top 
 						.catalog__filter-info Показано 8 товаров
+<<<<<<< Updated upstream
 						+select()
 					.catalog__lists 
+=======
+						+select(true)
+					.catalog__lists.catalog__lists-mw
+>>>>>>> Stashed changes
 						each card in data.detailsRecommended
 							+card(card, 'equipment')
 
+mixin page-catalog1()
+	section.catalog
+		.container
+			+header-title(data.ajaxPageTitle)
+			.catalog__banner-container.catalog__banner-slider-js
+				.catalog__banner-list.swiper-wrapper 
+					img(src='img/content/banner1.jpg').catalog__banner-img.catalog__banner-item.swiper-slide
+					img(src='img/content/banner2.jpg').catalog__banner-img.catalog__banner-item.swiper-slide
+				.catalog__banner-btn.catalog__banner-btn-left.catalog__banner-btn-left-js
+				.catalog__banner-btn.catalog__banner-btn-right.catalog__banner-btn-right-js
+				.slider__dots
+			.catalog__container 
+				.catalog__ajax 
+					ul 
+						li(title="Системы Ajax").active
+							<svg><use xlink:href="img/symbols.svg#ajax-icon"></use></svg> 
+							p Системы Ajax
+						li(title="Стартовые комплекты")
+							<svg><use xlink:href="img/symbols.svg#start-icon"></use></svg> 
+							p Стартовые комплекты
+						li(title="Центры управления")
+							<svg><use xlink:href="img/symbols.svg#centr-icon"></use></svg> 
+							p Центры управления
+						li(title="Охрана помещений")
+							<svg><use xlink:href="img/symbols.svg#home-icon"></use></svg> 
+							p Охрана помещений
+						li(title="Охрана улицы")
+							<svg><use xlink:href="img/symbols.svg#street-icon"></use></svg> 
+							p Охрана улицы
+						li(title="Защита то пожара")
+							<svg><use xlink:href="img/symbols.svg#fire-icon"></use></svg>
+							p Защита то пожара
+						li(title="Защита от потопа")
+							<svg><use xlink:href="img/symbols.svg#water-icon"></use></svg>
+							p Защита от потопа
+						li(title="Тревожные кнопки") 
+							<svg><use xlink:href="img/symbols.svg#alarm-icon"></use></svg>
+							p Тревожные кнопки
+						li(title="Управление") 
+							<svg><use xlink:href="img/symbols.svg#setting-icon"></use></svg>
+							p Управление
+						li(title="Сирены") 
+							<svg><use xlink:href="img/symbols.svg#alarm-sound-icon"></use></svg>
+							p Сирены
+						li(title="Автоматизация") 
+							<svg><use xlink:href="img/symbols.svg#automation-icon"></use></svg>
+							p Автоматизация
+						li(title="Модули интеграции") 
+							<svg><use xlink:href="img/symbols.svg#module-icon"></use></svg>
+							p Модули интеграции
+						li(title="Блоки питания") 
+							<svg><use xlink:href="img/symbols.svg#block-icon"></use></svg>
+							p Блоки питания
+					div(data-id='1').catalog__content
+						img(src='./img/content/img_ajax.jpg' alt='ajax')
+						.catalog__content-title Ajax – профессиональная система безопасности для вашей квартиры, дома и офиса.
+						ul 
+							li.catalog__content-banner 
+								.c-title Контроль доступа в помещение
+								ul 
+									li Датчики окрытия дверей и окон
+									li Датчики движения с фотофиксацией
+								a(href="#") Подробнее
+								img(src='./img/content/door_control.png' alt='Контроль доступа')
+							li.catalog__content-banner 
+								.c-title Предупреждение о затоплении и протечке
+								ul 
+									li Датчик информирования о протечке
+									li Функция отключения воды при протечке
+								a(href="#") Подробнее
+								img(src='./img/content/leaks.png' alt='Предупреждение о затоплении и протечке')
+							li.catalog__content-banner 
+								.c-title Оповещение о возгорании и задымлении
+								ul 
+									li Детектор дыма
+									li Предупреждение о резком росте температуры
+									li Детектор угарного газа
+								a(href="#") Подробнее
+								img(src='./img/content/fire.png' alt='Оповещение о возгорании и задымлении')
+							li.catalog__content-banner 
+								.c-title Функция умный дом
+								ul 
+									li Управление устройствами через приложение
+									li Управление подачей воды
+									li Сценарий управления устройствами
+								a(href="#") Подробнее
+								img(src='./img/content/app.png' alt='Функция умный дом')
+						ul._big-banner
+							li.catalog__content-banner 
+								.c-title Интеграция видеонаблюдения
+								p Подключение и управление системой видеонаблюдения
+								a(href="#") Подробнее
+								img(src='./img/content/1_ajax.png' alt='Интеграция видеонаблюдения')
+						.catalog__content-video 
+							p Посмотрите видео про систему охраны и управления AJAX.
+							img(src='./img/content/2134.jpg' alt='видео')
+					div(data-id='2').catalog__content.active
+						.catalog__content-title Центры управления
+						img(src='./img/content/hub.png' alt='ajax')
+						.catalog__content-desc Хаб — централь системы безопасности. Он контролирует работу всех устройств системы, ставит и снимает помещение с охраны, а в случае угрозы оповещает охранную компанию и пользователей системы.
+						.catalog__lists 
+							each card in data.detailsAjax
+								+card(card, 'ajax')

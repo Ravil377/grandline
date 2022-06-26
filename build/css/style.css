@@ -1175,6 +1175,20 @@ template {
     -ms-flex-direction: row;
         flex-direction: row;
 }
+<<<<<<< Updated upstream
+=======
+.banner_bg {
+    background-image: url("../img/content/background-stars.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.banner_bg .banner__right-side img {
+    object-fit: cover;
+}
+.banner_bg .banner__btn {
+    color: #061a29;
+}
+>>>>>>> Stashed changes
 .banner__right-side {
     height: auto;
     position: absolute;
@@ -1307,6 +1321,13 @@ template {
 .select__container {
     width: -webkit-fit-content;
     width:         fit-content;
+<<<<<<< Updated upstream
+=======
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+>>>>>>> Stashed changes
 }
 .select::-ms-expand {
     display: none;
@@ -1328,6 +1349,44 @@ template {
     background-position: left 0.7em top 50%, 0 0;
     padding: 0.6em 0.8em 0.5em 1.4em;
 }
+<<<<<<< Updated upstream
+=======
+/* для элемента input c type="checkbox" */
+.select__checkbox > input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+/* для элемента label, связанного с .custom-checkbox */
+.select__checkbox > span {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin: 0 5px;
+    -webkit-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 44px;
+    color: #126afa;
+    cursor: pointer;
+    padding: 0 14px;
+    border: 1px solid #126afa;
+    border-radius: var(--radius);
+}
+.select__checkbox > span:last-child {
+    margin-right: 10px;
+}
+/* стили для чекбокса, находящегося в состоянии checked */
+.select__checkbox > input:checked + span {
+    background: #126afa;
+    color: #ffffff;
+}
+>>>>>>> Stashed changes
 .two-banner {
     height: -webkit-fit-content;
     height:         fit-content;
@@ -1579,6 +1638,119 @@ template {
     margin: 0 auto;
     margin-top: 20px;
 }
+<<<<<<< Updated upstream
+=======
+.banner_blue-green {
+    background: linear-gradient(90deg, #dfefff 0%, #7dc1ff 49.48%, #c9ffb6 100%) !important;
+    margin-bottom: 52px;
+}
+.banner_blue-green .slider__left-container {
+    max-width: 593px;
+}
+.banner_blue-green .slider__container {
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+.banner_blue-green .slider__container h2 {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+}
+.banner_blue-green .slider__container h2 span {
+    white-space: nowrap;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #0063fa;
+    padding: 0 23px;
+    background: rgba(0, 0, 0, 0.0001);
+    border: 1px solid #0063fa;
+    width: -webkit-fit-content;
+    width:         fit-content;
+    margin-top: 15px;
+}
+.how-block {
+    padding-bottom: 107px;
+    margin-top: 40px;
+}
+.how-block > ul {
+    list-style: none;
+    display: -ms-grid;
+    display:     grid;
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    padding: 0;
+    margin: -16px;
+}
+.how-block > ul li {
+    padding: 22px;
+    box-shadow: 0px 10px 34px rgba(177, 197, 209, 0.47);
+    margin: 16px;
+    position: relative;
+    min-height: 253px;
+    border-radius: 5px;
+}
+.how-block > ul li:nth-child(1) {
+    background: #0063fa url("../img/content/how-man.png") no-repeat;
+    background-position: bottom right;
+    background-size: auto 122px;
+}
+.how-block > ul li:nth-child(2) {
+    background: #0063fa url("../img/content/case.png") no-repeat;
+    background-position: bottom right;
+    background-size: auto 122px;
+}
+.how-block > ul li:nth-child(3) {
+    background: #0063fa url("../img/content/doc.png") no-repeat;
+    background-position: bottom right;
+    background-size: auto 122px;
+}
+.how-block > ul li:nth-child(4) {
+    background: #0063fa url("../img/content/guard.png") no-repeat;
+    background-position: bottom right;
+    background-size: auto 122px;
+}
+.how-block > ul li .how-block__num {
+    font-weight: 500;
+    font-size: 64px;
+    color: #2df290;
+}
+.how-block > ul li .how-block__text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #ffffff;
+}
+.how-block > ul li .how-block__text a {
+    color: #2df290;
+    transition: 0.4s;
+}
+.how-block > ul li .how-block__text a:hover {
+    opacity: 0.8;
+}
+.how-block > ul li img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 122px;
+}
+.how-block > ul li::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    border: 0 solid transparent;
+    border-top-width: 0px;
+    border-bottom-width: 151px;
+    border-right: 48px solid #2df290;
+}
+.header__bottom-navigatiom_mobil .dropdown:hover .dropdown__menu-container {
+    max-height: unset;
+}
+>>>>>>> Stashed changes
 .modal {
     overflow-y: auto;
     height: 0;
@@ -1772,7 +1944,11 @@ template {
     position: relative;
     display: -ms-grid;
     display:     grid;
+<<<<<<< Updated upstream
     grid-template-areas: "logo nav tel btns"    "menu . . lk";
+=======
+    grid-template-areas: "logo nav tel btns" "menu . . lk";
+>>>>>>> Stashed changes
 }
 .header__container {
     display: -ms-flexbox;
@@ -2284,7 +2460,11 @@ template {
     width: 100%;
     display: -ms-grid;
     display:     grid;
+<<<<<<< Updated upstream
     grid-template-areas: "logo"    "app"    "connection"    "tech"    "home"    "busines"    "magazine"    "other";
+=======
+    grid-template-areas: "logo" "app" "connection"  "tech" "home"  "busines" "magazine" "other";
+>>>>>>> Stashed changes
     -ms-flex-pack: center;
     justify-content: center;
     position: relative;
@@ -2787,6 +2967,33 @@ template {
     width: 100%;
     height: auto;
 }
+<<<<<<< Updated upstream
+=======
+.application .support__form-title {
+    margin: 0;
+    margin-bottom: 20px;
+}
+.application .support__form-desc {
+    margin: 0;
+    margin-bottom: 10px;
+}
+.support__form-checkbox-container {
+    margin-bottom: 34px;
+}
+.application .catalog__filter-checkbox {
+    margin-right: 25px;
+}
+.application .catalog__filter-checkbox:last-child {
+    margin-right: 0;
+}
+.application .catalog__filter-checkbox span {
+    color: #0063fa;
+}
+.application .catalog__filter-checkbox > span::before {
+    border: 1px solid #0063fa;
+    margin-right: 10px;
+}
+>>>>>>> Stashed changes
 .business__news-container {
     background: #f4f6fb;
 }
@@ -3036,6 +3243,7 @@ template {
     color: #061a29;
     margin-bottom: 25px;
 }
+<<<<<<< Updated upstream
 .detail__info-text {
     font-weight: 400;
     font-size: 15px;
@@ -3046,6 +3254,8 @@ template {
 .detail__info-text:last-child {
     margin-bottom: 0;
 }
+=======
+>>>>>>> Stashed changes
 .detail__info-content {
     display: -ms-flexbox;
     display: flex;
@@ -3129,12 +3339,45 @@ template {
     display: flex;
     -ms-flex-direction: column;
         flex-direction: column;
+<<<<<<< Updated upstream
     margin-right: 32px;
 }
 .detail__info-content-text {
     max-height: 259px;
     overflow: hidden;
 }
+=======
+    width: 100%;
+    margin-right: 32px;
+}
+.detail__info-content-text {
+    display: none;
+}
+.detail__info-content-text p {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+    color: #747983;
+    margin-bottom: 25px;
+}
+.detail__info-content-text p:last-child {
+    margin-bottom: 0;
+}
+.detail__info-content-text h2 {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 24px;
+    color: #061a29;
+    margin-bottom: 25px;
+}
+.detail__info-content-text_morebtn {
+    max-height: 259px;
+    overflow: hidden;
+}
+.detail__info-content-text_active {
+    display: block;
+}
+>>>>>>> Stashed changes
 .detail__info-content-text_open .detail__info-content-text {
     max-height: 1000px;
 }
@@ -3503,7 +3746,11 @@ template {
     grid-gap: 32px;
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
+<<<<<<< Updated upstream
     grid-template-areas: "address"    "timework"    "contacts"    "tech"    "map";
+=======
+    grid-template-areas: "address"  "timework"  "contacts"  "tech" "map";
+>>>>>>> Stashed changes
 }
 .contacts__content ul {
     list-style-type: none;
@@ -3629,7 +3876,11 @@ template {
     display:     grid;
     -ms-grid-columns: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
+<<<<<<< Updated upstream
     grid-template-areas: "news news"    "sidebar sidebar";
+=======
+    grid-template-areas: "news news" "sidebar sidebar";
+>>>>>>> Stashed changes
     grid-gap: 32px;
 }
 .detail-news__content {
@@ -3962,6 +4213,13 @@ template {
 }
 .catalog__content {
     width: 100%;
+<<<<<<< Updated upstream
+=======
+    display: none;
+}
+.catalog__content.active {
+    display: block;
+>>>>>>> Stashed changes
 }
 .catalog__content-top {
     display: -ms-flexbox;
@@ -3970,6 +4228,11 @@ template {
     justify-content: space-between;
     -ms-flex-align: center;
     align-items: center;
+<<<<<<< Updated upstream
+=======
+    -ms-flex-direction: column;
+        flex-direction: column;
+>>>>>>> Stashed changes
 }
 .catalog__content-top .select {
     font-weight: 500;
@@ -4043,6 +4306,260 @@ template {
 .catalog__filter .irs-single::before {
     border: none;
 }
+<<<<<<< Updated upstream
+=======
+.catalog__ajax {
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+}
+.catalog__ajax .catalog__lists .card {
+    max-width: 100%;
+}
+.catalog__ajax > ul {
+    list-style: none;
+    box-shadow: 0px 10px 34px rgba(177, 197, 209, 0.47);
+    border-radius: 5px;
+    margin: 0;
+    padding: 0;
+    height: -webkit-fit-content;
+    height:         fit-content;
+}
+.catalog__ajax > ul li {
+    background: #ffffff;
+    height: 65px;
+    padding: 12px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid #ebebeb;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.catalog__ajax > ul li p {
+    display: none;
+}
+.catalog__ajax > ul li:first-child {
+    background: #f4f6fb;
+}
+.catalog__ajax > ul li svg {
+    width: 27px;
+    height: 27px;
+    fill: white;
+    stroke: #061a29;
+    transition: 0.4s;
+}
+.catalog__ajax > ul li:hover, .catalog__ajax > ul li.active {
+    color: #0063fa;
+}
+.catalog__ajax > ul li:hover svg, .catalog__ajax > ul li.active svg {
+    stroke: #0063fa;
+}
+.catalog__content {
+    width: 100%;
+    margin-left: 10px;
+}
+.catalog__content img {
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 33px;
+}
+.catalog__content > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: -ms-grid;
+    display:     grid;
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    margin: -13.5px;
+}
+.catalog__content > ul._big-banner {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+}
+.catalog__content > ul._big-banner > li {
+    background: #fafaff;
+}
+.catalog__content > ul._big-banner > li .c-title {
+    color: #061a29;
+}
+.catalog__content > ul._big-banner > li p {
+    color: #061a29;
+    max-width: 303px;
+}
+.catalog__content > ul._big-banner > li img {
+    right: -70px;
+}
+.catalog__content > ul > li {
+    margin: 13.5px;
+    box-shadow: 0px 10px 34px 0px #b1c5d178;
+    padding: 30px 10px;
+    position: relative;
+    background: #122754;
+    color: #ffffff;
+    z-index: 2;
+    overflow: hidden;
+    min-height: 298px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    border-radius: 5px;
+}
+.catalog__content > ul > li .c-title {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 27px;
+    z-index: 2;
+    margin: 0;
+    max-width: 281px;
+}
+.catalog__content > ul > li p {
+    color: inherit;
+}
+.catalog__content > ul > li > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 40px;
+    z-index: 2;
+    padding-left: 5px;
+    margin-bottom: 51px;
+}
+.catalog__content > ul > li > ul li {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    max-width: 281px;
+}
+.catalog__content > ul > li > ul li:before {
+    content: "-";
+    position: relative;
+    left: -5px;
+}
+.catalog__content > ul > li img {
+    display: block;
+    opacity: 0.3;
+    z-index: -1;
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    right: 0;
+    height: 100%;
+}
+.catalog__content > ul > li a {
+    min-height: 48px;
+    background: #0063fa;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 48px;
+    text-align: center;
+    color: #ffffff;
+    max-width: 280px;
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-top: auto;
+    transition: 0.4s;
+    border-radius: 5px;
+}
+.catalog__content > ul > li a:hover {
+    background: var(--background-dard-blue);
+}
+.catalog__content-title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 27px;
+    color: #061a29;
+    text-align: center;
+    margin-bottom: 33px;
+}
+.catalog__content-video {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 27px;
+    color: #061a29;
+    text-align: center;
+}
+.catalog__content-desc {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #061a29;
+    text-align: center;
+}
+.card__equipment-color-container {
+    display: -ms-flexbox;
+    display: flex;
+}
+.card__equipment-color {
+    margin-top: 9px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 7px;
+    border: 1px solid #000000;
+}
+.card__equipment-color:last-child {
+    margin-right: 0;
+}
+.card__equipment-color_black {
+    background-color: #000000;
+}
+.card__equipment-color_white {
+    background-color: #ffffff;
+}
+.detail__card-icon-container {
+    margin-top: 26px;
+}
+.detail__card-icon-container ul {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.detail__card-icon-container ul > li {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-right: 15px;
+    margin-bottom: 10px;
+}
+.detail__card-icon-container ul > li:last-child {
+    margin-right: 0;
+}
+.detail__card-icon-container ul > li svg {
+    width: 38px;
+    height: 38px;
+    margin-right: 10px;
+    fill: white;
+}
+.detail__card-info {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #747983;
+    margin-top: 42px;
+    margin-bottom: 58px;
+}
+.detail__info-list {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+}
+>>>>>>> Stashed changes
 @media (min-width: 480px) {
     .top-sale__title-container {
         -ms-flex-direction: row;
@@ -4055,7 +4572,11 @@ template {
         margin-left: 21px;
     }
     .footer__nav-top {
+<<<<<<< Updated upstream
         grid-template-areas: "logo logo"        "app app"        "connection tech"        "home busines"        "other magazine";
+=======
+        grid-template-areas: "logo logo" "app app" "connection tech" "home busines" "other magazine";
+>>>>>>> Stashed changes
         -ms-flex-pack: distribute;
         justify-content: space-around;
     }
@@ -4149,6 +4670,21 @@ template {
         margin-bottom: 0;
     }
 }
+<<<<<<< Updated upstream
+=======
+@media (min-width: 576px) {
+    .catalog__content > ul > li img {
+        object-fit: contain;
+        opacity: 1;
+    }
+}
+@media (min-width: 600px) {
+    .catalog__content-top {
+        -ms-flex-direction: row;
+            flex-direction: row;
+    }
+}
+>>>>>>> Stashed changes
 @media (min-width: 768px) {
     .slider {
         background: linear-gradient(90deg, #bae2ff 0%, #dde8f9 100%);
@@ -4228,12 +4764,23 @@ template {
         margin: 0;
         margin-top: 0;
     }
+<<<<<<< Updated upstream
+=======
+    .how-block > ul {
+        -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+>>>>>>> Stashed changes
     .top-sale__list {
         -ms-grid-columns: (1fr)[4];
         grid-template-columns: repeat(4, 1fr);
     }
     .footer__nav-top {
+<<<<<<< Updated upstream
         grid-template-areas: "logo logo connection tech"        "app app app app"        "home busines other magazine";
+=======
+        grid-template-areas: "logo logo connection tech" "app app app app" "home busines other magazine";
+>>>>>>> Stashed changes
     }
     .footer__logo {
         -ms-flex-pack: start;
@@ -4294,7 +4841,11 @@ template {
         grid-template-columns: repeat(2, 1fr);
         -ms-grid-rows: 1fr 1fr 570px;
         grid-template-rows: 1fr 1fr 570px;
+<<<<<<< Updated upstream
         grid-template-areas: "address timework"        "contacts tech"        "map map";
+=======
+        grid-template-areas: "address timework"  "contacts tech" "map map";
+>>>>>>> Stashed changes
     }
     .contacts__map {
         width: 100%;
@@ -4308,6 +4859,7 @@ template {
         display: -ms-flexbox;
         display: flex;
     }
+<<<<<<< Updated upstream
     .catalog__filter {
         max-width: 306px;
         margin-bottom: 0;
@@ -4324,6 +4876,23 @@ template {
     }
     .catalog__lists {
         margin-top: 56px;
+=======
+    .catalog__filter-panel {
+        margin-top: 56px;
+    }
+    .catalog__lists {
+        margin-top: 56px;
+    }
+    .catalog__content {
+        margin-left: 32px;
+    }
+    .catalog__content > ul > li {
+        padding: 35px 24px;
+    }
+    .catalog__content-title {
+        font-size: 36px;
+        line-height: 44px;
+>>>>>>> Stashed changes
     }
 }
 @media (min-width: 992px) {
@@ -4379,6 +4948,35 @@ template {
         -ms-grid-columns: 1fr 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
+<<<<<<< Updated upstream
+=======
+    .banner_blue-green .slider__container h2 {
+        -ms-flex-direction: row;
+            flex-direction: row;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+    .banner_blue-green .slider__container h2 span {
+        margin-top: 5px;
+        margin-left: 15px;
+    }
+    .how-block > ul {
+        -ms-grid-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .how-block > ul li:nth-child(1) {
+        background-size: auto 9vw;
+    }
+    .how-block > ul li:nth-child(2) {
+        background-size: auto 9vw;
+    }
+    .how-block > ul li:nth-child(3) {
+        background-size: auto 9vw;
+    }
+    .how-block > ul li:nth-child(4) {
+        background-size: auto 9vw;
+    }
+>>>>>>> Stashed changes
     .header__navigation {
         display: -ms-flexbox;
         display: flex;
@@ -4423,7 +5021,11 @@ template {
     .footer__nav-top {
         -ms-flex-pack: justify;
         justify-content: space-between;
+<<<<<<< Updated upstream
         grid-template-areas: "logo connection tech app"        "home busines magazine other";
+=======
+        grid-template-areas: "logo connection tech app" "home busines magazine other";
+>>>>>>> Stashed changes
     }
     .footer__bottom {
         max-width: 80%;
@@ -4454,7 +5056,11 @@ template {
     .detail-news__container {
         -ms-grid-columns: 1fr 420px;
         grid-template-columns: 1fr 420px;
+<<<<<<< Updated upstream
         grid-template-areas: "news lastnews"        "news sidebar";
+=======
+        grid-template-areas: "news lastnews" "news sidebar";
+>>>>>>> Stashed changes
     }
     .detail-news__list {
         -ms-flex-order: 1;
@@ -4468,10 +5074,43 @@ template {
         -ms-flex-order: 2;
         order: 2;
     }
+<<<<<<< Updated upstream
+=======
+    .catalog__filter {
+        max-width: 306px;
+        margin-bottom: 0;
+    }
+    .catalog__container {
+        -ms-flex-direction: row;
+            flex-direction: row;
+    }
+    .catalog__content {
+        margin-left: 32px;
+    }
+>>>>>>> Stashed changes
     .catalog__lists {
         -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
     }
+<<<<<<< Updated upstream
+=======
+    .catalog__ajax > ul {
+        max-width: 306px;
+        width: 100%;
+        overflow: hidden;
+    }
+    .catalog__ajax > ul li {
+        padding: 24px 29px;
+    }
+    .catalog__ajax > ul li p {
+        display: block;
+        font-weight: 500;
+        font-size: 16px;
+    }
+    .catalog__ajax > ul li svg {
+        margin-right: 22px;
+    }
+>>>>>>> Stashed changes
 }
 @media (min-width: 1200px) {
     .support__banner {
@@ -4501,7 +5140,11 @@ template {
         grid-template-columns: 307px 307px 2fr;
         -ms-grid-rows: unset;
         grid-template-rows: unset;
+<<<<<<< Updated upstream
         grid-template-areas: "address timework map map"        "contacts . map map"        "tech . map map";
+=======
+        grid-template-areas: "address timework map map" "contacts . map map" "tech . map map";
+>>>>>>> Stashed changes
     }
     .contacts__map {
         max-width: 622px;
@@ -4510,6 +5153,19 @@ template {
         -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
     }
+<<<<<<< Updated upstream
+=======
+    .catalog__content > ul._big-banner > li img {
+        right: -150px;
+    }
+    .catalog__content > ul {
+        -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+    .catalog__content > ul > li img {
+        right: -50px;
+    }
+>>>>>>> Stashed changes
 }
 @media (min-width: 1390px) {
     .popular-tarif__content {
@@ -4535,9 +5191,82 @@ template {
     .banner__titul {
         font-size: 36px;
     }
+<<<<<<< Updated upstream
 }
 @media (max-width: 992px) {
     .top-sale__two-banner .two-banner__content {
         padding-bottom: 165px;
     }
+=======
+    .how-block > ul li:nth-child(1) {
+        background-size: auto 122px;
+    }
+    .how-block > ul li:nth-child(2) {
+        background-size: auto 122px;
+    }
+    .how-block > ul li:nth-child(3) {
+        background-size: auto 122px;
+    }
+    .how-block > ul li:nth-child(4) {
+        background-size: auto 122px;
+    }
+}
+@media (max-width: 500px) {
+    .select__checkbox {
+        width: 100%;
+    }
+    .select__checkbox > span {
+        margin: 0;
+        margin-bottom: 20px;
+    }
+    .select__checkbox > span:last-child {
+        margin-right: 0;
+    }
+    .catalog__content-top .select__container {
+        -ms-flex-direction: column;
+            flex-direction: column;
+        width: 100%;
+    }
+}
+@media (max-width: 992px) {
+    .header__bottom-navigatiom_mobil .dropdown {
+        -ms-flex-direction: column;
+            flex-direction: column;
+        -ms-flex-align: start;
+        align-items: flex-start;
+        padding-top: 20px;
+        padding-left: 0;
+    }
+    .header__bottom-navigatiom_mobil .dropdown a {
+        padding-left: 14px;
+    }
+    .header__bottom-navigatiom_mobil .dropdown ul {
+        box-shadow: unset;
+    }
+    .header__bottom-navigatiom_mobil .dropdown__menu-container {
+        width: 100%;
+    }
+    .header__bottom-navigatiom_mobil .dropdown ul li a {
+        padding-left: 0;
+        padding-top: 18px;
+    }
+    .header__bottom-navigatiom_mobil .dropdown__menu {
+        padding-left: 0;
+    }
+    .header__bottom-navigatiom_mobil .dropdown__menu-container {
+        position: unset;
+    }
+    .top-sale__two-banner .two-banner__content {
+        padding-bottom: 165px;
+    }
+    .catalog__ajax > ul li {
+        width: -webkit-fit-content;
+        width:         fit-content;
+    }
+}
+@media (max-width: 1200px) {
+    .catalog__content > ul > li img {
+        width: auto;
+    }
+>>>>>>> Stashed changes
 }

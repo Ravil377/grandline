@@ -6805,6 +6805,7 @@
         swiper: cardThumbs
       }
     });
+<<<<<<< Updated upstream
   } // Меняем активность у таба
 
 
@@ -6816,11 +6817,51 @@
       const prevTab = container.querySelector(`.${activeClass}`);
       prevTab.classList.remove(`${activeClass}`);
       tab.classList.add(`${activeClass}`);
+=======
+  }
+
+  const moreBtnSwitch = item => {
+    const height = item.offsetHeight; // const textContainer = document.querySelector('.detail__info-content-text_active');
+
+    if (height > 259) {
+      item.classList.add('detail__info-content-text_morebtn');
+      moreBtn.style.display = 'block';
+    } else {
+      item.classList.remove('detail__info-content-text_morebtn');
+      moreBtn.style.display = 'none';
+    }
+  }; // Меняем активность у таба
+
+
+  const changeActiveClass = (e, activeClass = 'detail__info-item_active') => {
+    const moreButton = document.querySelector('.detail__info-content-text_morebtn');
+    const containerOpen = document.querySelector('.detail__info-content-text_open');
+    moreButton && moreButton.classList.remove('detail__info-content-text_morebtn');
+    containerOpen && containerOpen.classList.remove('detail__info-content-text_open');
+    moreBtn.textContent = 'Развернуть полностью';
+    const container = document.querySelector(`.detail__info-list-js`);
+    const tab = e.target;
+    const id = tab.id;
+
+    if (tab.classList.contains('detail__info-item')) {
+      const prevTab = container.querySelector(`.${activeClass}`);
+      const prevContent = document.querySelector(`.detail__info-content-text_active`);
+      prevTab.classList.remove(`detail__info-item_active`);
+      prevContent.classList.remove('detail__info-content-text_active');
+      tab.classList.add(`${activeClass}`);
+      const currentContent = document.querySelector(`[data-content='${id}']`);
+      currentContent.classList.add('detail__info-content-text_active');
+      moreBtnSwitch(currentContent);
+>>>>>>> Stashed changes
     } else {
       return;
     }
   };
 
+<<<<<<< Updated upstream
+=======
+  moreBtn && moreBtnSwitch(document.querySelector(`[data-content='description']`));
+>>>>>>> Stashed changes
   tab && tab.addEventListener('click', e => changeActiveClass(e));
   moreBtn && moreBtn.addEventListener('click', () => {
     const textContainer = document.querySelector('.detail__info-content-text-container');

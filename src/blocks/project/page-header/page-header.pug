@@ -7,19 +7,19 @@ mixin page-header()
 				nav.header__navigation
 					ul
 						li
-							a(href="#" target="_blank").hvr-underline-from-center Для дома
+							a(href="#").hvr-underline-from-center Для дома
 						li 
-							a(href="#" target="_blank").hvr-underline-from-center Для бизнеса
+							a(href="#").hvr-underline-from-center Для бизнеса
 						li 
-							a(href="#" target="_blank").hvr-underline-from-center Интернет-магазин
+							a(href="#").hvr-underline-from-center Интернет-магазин
 						li.dropdown 
-							a(href="#" target="_blank").dropdown__icon.dropdown__icon-js Еще
+							a(href="#").dropdown__icon.dropdown__icon-js Еще
 							.dropdown__menu-container
 								ul.dropdown__menu
 									li 
-										a(href="#" target="_blank") Новости
+										a(href="#") Новости
 									li 
-										a(href="#" target="_blank") Контакты
+										a(href="#") Контакты
 				a(href="tel:+74954016161").header__phone 
 					p +7 (495) 401-61-61
 				.burger.burger-js
@@ -28,33 +28,41 @@ mixin page-header()
 					nav.header__navigation.header__navigation_mobil.header__navigation_mobil-js
 						ul.swiper-wrapper
 							li.swiper-slide
-								a(href="#" target="_blank").hvr-underline-from-center Для дома
+								a(href="#").hvr-underline-from-center Для дома
 							li.swiper-slide
-								a(href="#" target="_blank").hvr-underline-from-center Для бизнеса
+								a(href="#").hvr-underline-from-center Для бизнеса
 							li.swiper-slide
-								a(href="#" target="_blank").hvr-underline-from-center Интернет-магазин
+								a(href="#").hvr-underline-from-center Интернет-магазин
 							li.dropdown.swiper-slide 
 								a(href="#").dropdown__icon.dropdown__icon-js Еще
 								.dropdown__menu-container
 									ul.dropdown__menu
 										li 
-											a(href="#" target="_blank") Новости
+											a(href="#") Новости
 										li 
-											a(href="#" target="_blank") Контакты
+											a(href="#") Контакты
 					nav.header__bottom-navigation.header__bottom-navigatiom_mobil
 						ul
 							li.lk
-								a(href="#" target="_blank").lk__link Личный кабинет		
+								a(href="#").lk__link Личный кабинет		
 							li 
-								a(href="#" target="_blank") Интернет
+								a(href="#") Интернет
 							li 
-								a(href="#" target="_blank") Телевидение
+								a(href="#") Телевидение
 							li 
-								a(href="#" target="_blank") Телефония
-							li 
-								a(href="#" target="_blank") Видеонаблюдение
-							li 
-								a(href="#" target="_blank") Абонентам			
+								a(href="#") Смотрёшка ТВ
+							li.dropdown 
+								a(href="#").dropdown__icon.dropdown__icon-js Дополнительные услуги
+								.dropdown__menu-container
+									ul(style="padding-top: 0;").dropdown__menu
+										li 
+											a(href="#") Видеонаблюдение
+										li 
+											a(href="#") Охранная сигнализация
+										li 
+											a(href="#") Построение сети Wi-FIi и ЛВС
+										li 
+											a(href="#") Монтаж СКС
 					.header__buttons.header__buttons_mobil
 						a(href="#") Оплата
 						a(href="#") Поддержка
@@ -66,15 +74,23 @@ mixin page-header()
 				nav.header__bottom-navigation
 					ul
 						li 
-							a(href="#" target="_blank") Интернет
+							a(href="#") Интернет
 						li 
-							a(href="#" target="_blank") Телевидение
+							a(href="#") Телевидение
 						li 
-							a(href="#" target="_blank") Телефония
-						li 
-							a(href="#" target="_blank") Видеонаблюдение
-						li 
-							a(href="#" target="_blank") Абонентам
+							a(href="#") Смотрёшка ТВ
+						li.dropdown  
+							a(href="#").dropdown__icon.dropdown__icon-js Дополнительные услуги
+							.dropdown__menu-container
+								ul(style="padding-top: 0;").dropdown__menu
+									li 
+										a(href="#") Видеонаблюдение
+									li 
+										a(href="#") Охранная сигнализация
+									li 
+										a(href="#") Построение сети Wi-FIi и ЛВС
+									li 
+										a(href="#") Монтаж СКС
 						li.lk
-							a(href="#" target="_blank").lk__link Личный кабинет
+							a(href="#").lk__link Личный кабинет
 
